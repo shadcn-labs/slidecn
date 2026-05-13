@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { ListSlide } from "@/registry/slidecn/ui/list-slide";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const ListSlidePreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

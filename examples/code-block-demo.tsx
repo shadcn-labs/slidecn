@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { CodeBlock } from "@/registry/slidecn/ui/code-block";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 const code = `function greet(name: string): string {
   return "Hello, " + name + "!";

@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { FitText } from "@/registry/slidecn/ui/fit-text";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const FitTextPreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

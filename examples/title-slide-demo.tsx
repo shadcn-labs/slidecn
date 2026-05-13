@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { TitleSlide } from "@/registry/slidecn/ui/title-slide";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const TitleSlidePreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { FragmentReveal } from "@/registry/slidecn/ui/fragment-reveal";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const FragmentRevealPreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

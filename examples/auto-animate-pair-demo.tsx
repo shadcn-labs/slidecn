@@ -6,7 +6,7 @@ import { AutoAnimatePair } from "@/registry/slidecn/ui/auto-animate-pair";
 import { CodeBlock } from "@/registry/slidecn/ui/code-block";
 import { ContentSlide } from "@/registry/slidecn/ui/content-slide";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 const codeBefore = `function fibonacci(n: number): number {
   if (n <= 1) return n;

@@ -5,7 +5,7 @@ import { Deck } from "@revealjs/react";
 import { ContentSlide } from "@/registry/slidecn/ui/content-slide";
 import { Notes } from "@/registry/slidecn/ui/notes";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const NotesPreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

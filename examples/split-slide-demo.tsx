@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { SplitSlide } from "@/registry/slidecn/ui/split-slide";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const SplitSlidePreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">

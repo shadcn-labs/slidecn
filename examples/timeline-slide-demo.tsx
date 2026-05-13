@@ -4,7 +4,7 @@ import { Deck } from "@revealjs/react";
 
 import { TimelineSlide } from "@/registry/slidecn/ui/timeline-slide";
 
-import "reveal.js/dist/reveal.css";
+import "reveal.js/reveal.css";
 
 export const TimelineSlidePreview = () => (
   <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">
