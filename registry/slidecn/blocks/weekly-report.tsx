@@ -1,7 +1,3 @@
-// Requires: @revealjs/react reveal.js
-// Returns an array of slide elements for a 5-slide weekly report
-// Wrap in <Deck> in your app
-
 import { ListSlide } from "@/registry/slidecn/ui/list-slide";
 import { SplitSlide } from "@/registry/slidecn/ui/split-slide";
 import { StatSlide } from "@/registry/slidecn/ui/stat-slide";

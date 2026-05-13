@@ -1,0 +1,45 @@
+---
+title: Dark
+description: Dark background with light text for low-light environments and night mode presentations.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/theme-dark.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy the CSS file into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/themes/theme-dark.css"
+  title="components/slidecn/themes/theme-dark.css"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import "@/components/slides/themes/theme-dark.css";
+```

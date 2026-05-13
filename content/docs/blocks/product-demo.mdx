@@ -3,11 +3,48 @@ title: Product Demo
 description: A 6-slide product demo template for showcasing features and metrics.
 ---
 
-## Installation
+<ComponentPreview name="product-demo-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
 
 ```bash
 npx shadcn@latest add https://slidecn.dev/r/product-demo.json
 ```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react reveal.js
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/blocks/product-demo.tsx"
+  title="components/slidecn/blocks/product-demo.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
 
 ## Usage
 

@@ -1,4 +1,4 @@
 {
   "title": "Themes",
-  "pages": ["index"]
+  "pages": ["default", "dark", "minimal", "brand"]
 }

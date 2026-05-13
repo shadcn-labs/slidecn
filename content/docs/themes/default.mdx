@@ -1,0 +1,45 @@
+---
+title: Default
+description: Light theme with neutral tones — the default slidecn appearance.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/theme-default.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy the CSS file into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/themes/theme-default.css"
+  title="components/slidecn/themes/theme-default.css"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import "@/components/slides/themes/theme-default.css";
+```

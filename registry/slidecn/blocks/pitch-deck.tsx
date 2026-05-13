@@ -1,7 +1,3 @@
-// Requires: @revealjs/react reveal.js
-// Returns an array of slide elements for a 7-slide pitch deck
-// Wrap in <Deck> in your app
-
 import { ImageSlide } from "@/registry/slidecn/ui/image-slide";
 import { ListSlide } from "@/registry/slidecn/ui/list-slide";
 import { SplitSlide } from "@/registry/slidecn/ui/split-slide";

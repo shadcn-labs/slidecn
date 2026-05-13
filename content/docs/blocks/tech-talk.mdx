@@ -3,11 +3,48 @@ title: Tech Talk
 description: An 8-slide technical talk template with code examples and auto-animate transitions.
 ---
 
-## Installation
+<ComponentPreview name="tech-talk-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
 
 ```bash
 npx shadcn@latest add https://slidecn.dev/r/tech-talk.json
 ```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react reveal.js
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/blocks/tech-talk.tsx"
+  title="components/slidecn/blocks/tech-talk.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
 
 ## Usage
 

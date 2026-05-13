@@ -1,7 +1,3 @@
-// Requires: @revealjs/react reveal.js
-// Returns an array of slide elements for a 6-slide product demo
-// Wrap in <Deck> in your app
-
 import { ComparisonSlide } from "@/registry/slidecn/ui/comparison-slide";
 import { ImageSlide } from "@/registry/slidecn/ui/image-slide";
 import { ListSlide } from "@/registry/slidecn/ui/list-slide";

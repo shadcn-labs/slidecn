@@ -1,7 +1,3 @@
-// Requires: @revealjs/react reveal.js
-// Returns an array of slide elements for an 8-slide technical talk
-// Wrap in <Deck> in your app
-
 import { AutoAnimatePair } from "@/registry/slidecn/ui/auto-animate-pair";
 import { CodeBlock } from "@/registry/slidecn/ui/code-block";
 import { ContentSlide } from "@/registry/slidecn/ui/content-slide";
