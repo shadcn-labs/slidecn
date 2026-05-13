@@ -1,0 +1,43 @@
+---
+title: Themes
+description: CSS theme files for customizing reveal.js presentation appearance.
+---
+
+slidecn themes customize the look and feel of your presentations by setting reveal.js CSS custom properties.
+
+## Usage
+
+Import the CSS file into your layout or presentation page:
+
+```tsx
+import "@/components/slides/themes/theme-default.css";
+```
+
+## Available Themes
+
+- **Default** — Light theme with neutral tones
+- **Dark** — Dark background, light text
+- **Minimal** — Clean, minimal design with larger base font
+- **Brand** — Starter template with brand color variables
+
+## Custom Theme
+
+The brand theme includes placeholder CSS variables for your brand colors. Uncomment and customize:
+
+```css
+.reveal {
+  --brand-primary: #6366f1;
+  --brand-secondary: #8b5cf6;
+  --brand-bg: #0f0f1a;
+  --brand-text: #f8fafc;
+}
+```
+
+## Registration
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/theme-default.json
+npx shadcn@latest add https://slidecn.dev/r/theme-dark.json
+npx shadcn@latest add https://slidecn.dev/r/theme-minimal.json
+npx shadcn@latest add https://slidecn.dev/r/theme-brand.json
+```

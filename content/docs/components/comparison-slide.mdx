@@ -1,0 +1,109 @@
+---
+title: Comparison Slide
+description: A side-by-side comparison slide with columns or table variant.
+---
+
+<ComponentPreview>
+
+<ComparisonSlide
+  title="Before vs After"
+  left={{
+    label: "Before",
+    items: ["Manual process", "No automation"],
+    color: "red",
+  }}
+  right={{
+    label: "After",
+    items: ["Automated flow", "Real-time sync"],
+    color: "green",
+  }}
+/>
+
+</ComponentPreview>
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/comparison-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/comparison-slide.tsx"
+  title="components/slidecn/comparison-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import ComparisonSlide from "@/components/slides/comparison-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <ComparisonSlide
+        title="Framework Comparison"
+        variant="table"
+        left={{
+          label: "Framework A",
+          items: ["Feature X", "Feature Y", "Feature Z"],
+        }}
+        right={{
+          label: "Framework B",
+          items: ["Feature X", "Feature Y"],
+          color: "red",
+        }}
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### ComparisonSlide
+
+| Prop      | Type                   | Default     | Description       |
+| --------- | ---------------------- | ----------- | ----------------- |
+| `title`   | `string`               | -           | Slide heading     |
+| `left`    | `ComparisonColumn`     | required    | Left column data  |
+| `right`   | `ComparisonColumn`     | required    | Right column data |
+| `variant` | `"columns" \| "table"` | `"columns"` | Display variant   |
+| `notes`   | `string`               | -           | Speaker notes     |
+
+### ComparisonColumn
+
+| Field   | Type                            | Description   |
+| ------- | ------------------------------- | ------------- |
+| `label` | `string`                        | Column header |
+| `items` | `string[]`                      | List entries  |
+| `color` | `"default" \| "green" \| "red"` | Header color  |

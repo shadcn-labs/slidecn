@@ -1,4 +1,25 @@
 {
   "title": "Components",
-  "pages": ["index", "your-component"]
+  "pages": [
+    "index",
+    "title-slide",
+    "section-slide",
+    "content-slide",
+    "split-slide",
+    "image-slide",
+    "stat-slide",
+    "quote-slide",
+    "list-slide",
+    "comparison-slide",
+    "timeline-slide",
+    "team-slide",
+    "code-block",
+    "fragment-list",
+    "fragment-reveal",
+    "fit-text",
+    "callout",
+    "notes",
+    "auto-animate-pair",
+    "stack-reveal"
+  ]
 }

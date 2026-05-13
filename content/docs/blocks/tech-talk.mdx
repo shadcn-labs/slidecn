@@ -1,0 +1,36 @@
+---
+title: Tech Talk
+description: An 8-slide technical talk template with code examples and auto-animate transitions.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/tech-talk.json
+```
+
+## Usage
+
+```tsx
+import { Deck } from "@revealjs/react";
+import { TechTalk } from "@/components/slides/blocks/tech-talk";
+
+export function MyTechTalk() {
+  return (
+    <Deck>
+      <TechTalk />
+    </Deck>
+  );
+}
+```
+
+## Slides
+
+1. **Title** — Talk title and speaker info
+2. **Agenda** — Animated agenda list
+3. **Section** — Part I divider
+4. **Problem** — Naive recursion with code
+5. **Optimization** — Auto-animate code before/after
+6. **Section** — Part II divider
+7. **Results** — Benchmark with highlighted lines
+8. **Thanks** — Q&A with links

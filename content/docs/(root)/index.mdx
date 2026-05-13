@@ -1,16 +1,16 @@
 ---
 title: Introduction
-description: A template for building and publishing your own shadcn registry components.
+description: Beautiful presentation components, made simple. Built on reveal.js.
 ---
 
-A **ready-to-use template** for creating and publishing custom components to the [shadcn registry](https://ui.shadcn.com/docs/registry).
+**slidecn** is a collection of beautiful presentation components built on [reveal.js](https://revealjs.com). It makes creating stunning slides easy while maintaining full compatibility with [shadcn/ui](https://ui.shadcn.com).
 
 ## What You Get
 
-- 📦 **Simple structure** - One component file + one config file
+- 🎯 **Reveal.js powered** - Build beautiful presentations with the popular HTML presentation framework
 - 📚 **Documentation site** - Powered by Fumadocs
-- 🎨 **Registry compatible** - Works with `npx shadcn add`
-- 🤖 **[Agent ready](https://www.mintlify.com/score/startercn)** - Ships with `llms.txt`, `llms-full.txt`, API catalog routes, and agent skill discovery endpoints
+- 🎨 **Shadcn compatible** - Works with `npx shadcn add`
+- 🤖 **[Agent ready](https://www.mintlify.com/score/slidecn)** - Ships with `llms.txt`, `llms-full.txt`, API catalog routes, and agent skill discovery endpoints
 - 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in interaction sounds powered by `@web-kits/audio`
 - 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback for supported devices via `web-haptics`
 - ✨ **[Motion animations](https://motion.dev/)** - Uses `motion` for animated UI states and transitions
@@ -23,59 +23,13 @@ A **ready-to-use template** for creating and publishing custom components to the
 - `Next.js 16` + App Router
 - `React 19`
 - `Tailwind CSS 4`
-- `Fumadocs`
-- `motion`
-- `@web-kits/audio`
-- `web-haptics`
-- `shiki` + `rehype-pretty-code`
+- `Reveal.js` - HTML presentation framework
+- `Fumadocs` - Documentation
+- `motion` - Animations
+- `@web-kits/audio` - Audio feedback
+- `web-haptics` - Haptic feedback
+- `shiki` + `rehype-pretty-code` - Code highlighting
 
-## How It Works
+## Coming Soon
 
-1. Edit your component at `registry/new-york/your-component.tsx`
-2. Update `registry.json` with your component name and details
-3. Run `pnpm registry:build`
-
-That's it. Deploy your app and users can install your component:
-
-```bash
-npx shadcn@latest add https://your-site.com/r/your-component.json
-```
-
-## FAQ
-
-<Accordion type="multiple">
-
-<AccordionItem value="faq-1">
-<AccordionTrigger>
-Why copy/paste instead of npm packages?
-</AccordionTrigger>
-<AccordionContent>
-
-The shadcn philosophy gives you **ownership** of the code. You can customize components to your exact needs without fighting library constraints.
-
-</AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-2">
-<AccordionTrigger>
-Which frameworks are supported?
-</AccordionTrigger>
-<AccordionContent>
-
-Any React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.
-
-</AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-3">
-<AccordionTrigger>
-Can I publish multiple components?
-</AccordionTrigger>
-<AccordionContent>
-
-Yes! Add more files to `registry/new-york/` and list them in `registry.json`.
-
-</AccordionContent>
-</AccordionItem>
-
-</Accordion>
+We're currently working on adding more presentation components. Stay tuned!

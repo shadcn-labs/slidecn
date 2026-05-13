@@ -1,0 +1,62 @@
+---
+title: Notes
+description: Speaker notes for reveal.js presentations.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/notes
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/notes.tsx"
+  title="components/slidecn/notes.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import Notes from "@/components/slides/notes";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <Notes markdown>## Speaker Notes - Point one - Point two</Notes>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### Notes
+
+| Prop       | Type      | Default  | Description       |
+| ---------- | --------- | -------- | ----------------- |
+| `children` | `string`  | required | Note content      |
+| `markdown` | `boolean` | -        | Parse as markdown |

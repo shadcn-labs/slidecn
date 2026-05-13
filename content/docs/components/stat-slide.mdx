@@ -1,0 +1,87 @@
+---
+title: Stat Slide
+description: A statistics-focused slide with single, row, or grid layouts.
+---
+
+<ComponentPreview name="stat-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/stat-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/stat-slide.tsx"
+  title="components/slidecn/stat-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import StatSlide from "@/components/slides/stat-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <StatSlide
+        title="Growth"
+        layout="grid"
+        stats={[
+          { value: "10K", label: "Users", description: "Monthly active" },
+          { value: "3x", label: "Growth", description: "Year over year" },
+        ]}
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### StatSlide
+
+| Prop     | Type                          | Default    | Description         |
+| -------- | ----------------------------- | ---------- | ------------------- |
+| `title`  | `string`                      | -          | Slide heading       |
+| `stats`  | `Stat[]`                      | required   | Array of statistics |
+| `layout` | `"single" \| "row" \| "grid"` | `"single"` | Layout arrangement  |
+| `notes`  | `string`                      | -          | Speaker notes       |
+
+### Stat
+
+| Field         | Type     | Description             |
+| ------------- | -------- | ----------------------- |
+| `value`       | `string` | The statistic value     |
+| `label`       | `string` | Label for the statistic |
+| `description` | `string` | Optional description    |

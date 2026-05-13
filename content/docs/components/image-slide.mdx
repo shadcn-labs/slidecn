@@ -1,0 +1,76 @@
+---
+title: Image Slide
+description: A slide for displaying images with stretch, contained, or full-bleed modes.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/image-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/image-slide.tsx"
+  title="components/slidecn/image-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import ImageSlide from "@/components/slides/image-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <ImageSlide
+        src="/images/product.png"
+        alt="Product screenshot"
+        mode="full-bleed"
+        caption="Dashboard overview"
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### ImageSlide
+
+| Prop      | Type                                       | Default       | Description      |
+| --------- | ------------------------------------------ | ------------- | ---------------- |
+| `src`     | `string`                                   | required      | Image source URL |
+| `alt`     | `string`                                   | required      | Image alt text   |
+| `caption` | `string`                                   | -             | Caption text     |
+| `mode`    | `"stretch" \| "contained" \| "full-bleed"` | `"contained"` | Display mode     |
+| `notes`   | `string`                                   | -             | Speaker notes    |

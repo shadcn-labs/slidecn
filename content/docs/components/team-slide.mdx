@@ -1,0 +1,97 @@
+---
+title: Team Slide
+description: A team member showcase slide with avatars, roles, and bios.
+---
+
+<ComponentPreview name="team-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/team-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/team-slide.tsx"
+  title="components/slidecn/team-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import TeamSlide from "@/components/slides/team-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <TeamSlide
+        title="Engineering"
+        columns={4}
+        members={[
+          {
+            name: "Alice",
+            role: "Frontend Lead",
+            avatar: "/avatars/alice.jpg",
+          },
+          {
+            name: "Bob",
+            role: "Backend Lead",
+            avatar: "/avatars/bob.jpg",
+            bio: "Ex-Google",
+          },
+        ]}
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### TeamSlide
+
+| Prop      | Type           | Default  | Description   |
+| --------- | -------------- | -------- | ------------- |
+| `title`   | `string`       | -        | Slide heading |
+| `members` | `TeamMember[]` | required | Team members  |
+| `columns` | `2 \| 3 \| 4`  | `3`      | Grid columns  |
+| `notes`   | `string`       | -        | Speaker notes |
+
+### TeamMember
+
+| Field    | Type     | Description      |
+| -------- | -------- | ---------------- |
+| `name`   | `string` | Member name      |
+| `role`   | `string` | Role/title       |
+| `avatar` | `string` | Avatar image URL |
+| `bio`    | `string` | Short biography  |

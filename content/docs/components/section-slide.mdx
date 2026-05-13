@@ -1,0 +1,72 @@
+---
+title: Section Slide
+description: A chapter divider slide with label and title.
+---
+
+<ComponentPreview name="section-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/section-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/section-slide.tsx"
+  title="components/slidecn/section-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import SectionSlide from "@/components/slides/section-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <SectionSlide label="Chapter 2" title="Our Solution" variant="accent" />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### SectionSlide
+
+| Prop      | Type                    | Default     | Description                           |
+| --------- | ----------------------- | ----------- | ------------------------------------- |
+| `label`   | `string`                | -           | Small uppercase label above the title |
+| `title`   | `string`                | required    | Section heading                       |
+| `variant` | `"minimal" \| "accent"` | `"minimal"` | Visual style variant                  |
+| `notes`   | `string`                | -           | Speaker notes                         |

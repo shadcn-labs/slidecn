@@ -1,0 +1,78 @@
+---
+title: Split Slide
+description: A two-column split layout slide with configurable ratio.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/split-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/split-slide.tsx"
+  title="components/slidecn/split-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import SplitSlide from "@/components/slides/split-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <SplitSlide
+        title="Comparison"
+        left={<div>Column A</div>}
+        right={<div>Column B</div>}
+        ratio="left-wide"
+        divider
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### SplitSlide
+
+| Prop      | Type                                     | Default   | Description             |
+| --------- | ---------------------------------------- | --------- | ----------------------- |
+| `title`   | `string`                                 | -         | Slide heading           |
+| `left`    | `ReactNode`                              | required  | Left column content     |
+| `right`   | `ReactNode`                              | required  | Right column content    |
+| `ratio`   | `"equal" \| "left-wide" \| "right-wide"` | `"equal"` | Column width ratio      |
+| `divider` | `boolean`                                | -         | Show a vertical divider |
+| `notes`   | `string`                                 | -         | Speaker notes           |

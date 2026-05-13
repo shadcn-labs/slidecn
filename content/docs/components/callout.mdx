@@ -1,0 +1,80 @@
+---
+title: Callout
+description: An info, warning, tip, or danger callout box with icon and title.
+---
+
+<ComponentPreview>
+
+<Callout variant="info" title="Note">
+  Here is some important information.
+</Callout>
+
+</ComponentPreview>
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/callout
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/callout.tsx"
+  title="components/slidecn/callout.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import Callout from "@/components/slides/callout";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <Callout variant="warning" title="Caution">
+        This operation cannot be undone.
+      </Callout>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### Callout
+
+| Prop       | Type                                       | Default  | Description     |
+| ---------- | ------------------------------------------ | -------- | --------------- |
+| `variant`  | `"info" \| "warning" \| "tip" \| "danger"` | `"info"` | Callout style   |
+| `title`    | `string`                                   | -        | Callout heading |
+| `children` | `ReactNode`                                | required | Callout content |
+| `icon`     | `boolean`                                  | `true`   | Show icon       |

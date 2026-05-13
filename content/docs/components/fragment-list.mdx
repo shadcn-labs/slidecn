@@ -1,0 +1,79 @@
+---
+title: Fragment List
+description: A list wrapper with fragment-based reveal animations on each item.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/fragment-list
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/fragment-list.tsx"
+  title="components/slidecn/fragment-list.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import FragmentList from "@/components/slides/fragment-list";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <FragmentList
+        as="ul"
+        animation="fade-up"
+        stagger
+        items={[
+          <span>First point</span>,
+          <span>Second point</span>,
+          <span>Third point</span>,
+        ]}
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### FragmentList
+
+| Prop        | Type                | Default     | Description        |
+| ----------- | ------------------- | ----------- | ------------------ |
+| `items`     | `ReactNode[]`       | required    | List items         |
+| `as`        | `"ul" \| "ol"`      | `"ul"`      | List type          |
+| `animation` | `FragmentAnimation` | `"fade-up"` | Fragment animation |
+| `stagger`   | `boolean`           | `false`     | Stagger indices    |

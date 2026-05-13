@@ -1,0 +1,75 @@
+---
+title: Content Slide
+description: A general-purpose content slide with multiple layout options.
+---
+
+<ComponentPreview name="content-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/content-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/content-slide.tsx"
+  title="components/slidecn/content-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import ContentSlide from "@/components/slides/content-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <ContentSlide title="Architecture" layout="split">
+        <div>Left content</div>
+        <div>Right content</div>
+      </ContentSlide>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### ContentSlide
+
+| Prop       | Type                                   | Default     | Description   |
+| ---------- | -------------------------------------- | ----------- | ------------- |
+| `title`    | `string`                               | -           | Slide heading |
+| `layout`   | `"default" \| "split" \| "full-bleed"` | `"default"` | Layout mode   |
+| `children` | `ReactNode`                            | required    | Slide content |
+| `notes`    | `string`                               | -           | Speaker notes |

@@ -1,0 +1,82 @@
+---
+title: Code Block
+description: A syntax-highlighted code block with filename, line numbers, and copy button.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/code-block
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react sonner @web-kits/audio
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/code-block.tsx"
+  title="components/slidecn/code-block.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import CodeBlock from "@/components/slides/code-block";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <CodeBlock
+        language="python"
+        lineNumbers="1|3-5"
+        filename="main.py"
+        showCopy={true}
+      >
+        {`def hello():
+    print("Hello, world!")`}
+      </CodeBlock>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### CodeBlock
+
+| Prop            | Type                | Default  | Description                    |
+| --------------- | ------------------- | -------- | ------------------------------ |
+| `language`      | `string`            | required | Code language                  |
+| `children`      | `string`            | required | Code content                   |
+| `lineNumbers`   | `boolean \| string` | -        | Show or configure line numbers |
+| `filename`      | `string`            | -        | Display filename in header     |
+| `showCopy`      | `boolean`           | `true`   | Show copy button               |
+| `autoAnimateId` | `string`            | -        | Auto-animate data ID           |
+| `startFrom`     | `number`            | -        | Starting line number           |
+| `trim`          | `boolean`           | `true`   | Trim whitespace                |

@@ -1,4 +1,4 @@
-export const FALLBACK_SITE_ORIGIN = "https://startercn.vercel.app" as const;
+export const FALLBACK_SITE_ORIGIN = "https://slidecn.dev" as const;
 
 const getBaseUrl = () => {
   if (process.env.NODE_ENV !== "production") {
@@ -20,21 +20,23 @@ export const SITE = {
     TWITTER: "@alaymanguy",
   },
   DESCRIPTION: {
-    LONG: "A starter kit for building and publishing your own shadcn registry components.",
-    SHORT: "Build your own shadcn registry",
+    LONG: "Beautiful presentation components, made simple. Built on reveal.js. Works with shadcn/ui.",
+    SHORT: "Beautiful presentations, made simple",
   },
   KEYWORDS: [
+    "presentation",
+    "reveal.js",
+    "slides",
+    "slide deck",
     "shadcn",
-    "shadcn registry",
     "component registry",
-    "shadcn components",
+    "react components",
     "next.js",
-    "tailwindcss",
     "npx shadcn add",
   ] as const,
-  NAME: "startercn",
-  OG_IMAGE: `${baseUrl}/og`,
-  REGISTRY: baseUrl,
+  NAME: "slidecn",
+  OG_IMAGE: `${baseUrl}/og.png`,
+  REGISTRY: "@slidecn",
   URL: baseUrl,
 };
 

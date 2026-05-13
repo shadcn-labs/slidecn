@@ -1,0 +1,35 @@
+---
+title: Pitch Deck
+description: A 7-slide pitch deck template for investor presentations.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/pitch-deck.json
+```
+
+## Usage
+
+```tsx
+import { Deck } from "@revealjs/react";
+import { PitchDeck } from "@/components/slides/blocks/pitch-deck";
+
+export function InvestorPitch() {
+  return (
+    <Deck>
+      <PitchDeck />
+    </Deck>
+  );
+}
+```
+
+## Slides
+
+1. **Title** — Eyebrow, title, subtitle, author, date
+2. **Problem** — Split slide with stat + problem description
+3. **Solution** — Animated list of key points
+4. **How It Works** — Vertical timeline + product screenshot
+5. **Traction** — Row of key metrics
+6. **Team** — Team member grid
+7. **CTA** — Thank you with contact info

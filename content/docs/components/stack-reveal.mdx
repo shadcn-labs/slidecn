@@ -1,0 +1,72 @@
+---
+title: Stack Reveal
+description: A thin typed wrapper over the reveal.js Stack component for vertical stacking.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/stack-reveal
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/stack-reveal.tsx"
+  title="components/slidecn/stack-reveal.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import StackReveal from "@/components/slides/stack-reveal";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <StackReveal className="gap-4">
+        <Slide>First stacked slide</Slide>
+        <Slide>Second stacked slide</Slide>
+      </StackReveal>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### StackReveal
+
+| Prop        | Type            | Default | Description            |
+| ----------- | --------------- | ------- | ---------------------- |
+| `className` | `string`        | -       | Additional CSS classes |
+| `style`     | `CSSProperties` | -       | Inline styles          |
+| `children`  | `ReactNode`     | -       | Stack content          |

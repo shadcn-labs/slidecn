@@ -1,0 +1,85 @@
+---
+title: Auto Animate Pair
+description: Two consecutive slides with auto-animate enabled for smooth transitions between states.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/auto-animate-pair
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/auto-animate-pair.tsx"
+  title="components/slidecn/auto-animate-pair.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import AutoAnimatePair from "@/components/slides/auto-animate-pair";
+import CodeBlock from "@/components/slides/code-block";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <AutoAnimatePair
+        animateId="code-diff"
+        from={
+          <CodeBlock language="ts" autoAnimateId="code-diff">
+            {codeBefore}
+          </CodeBlock>
+        }
+        to={
+          <CodeBlock language="ts" autoAnimateId="code-diff">
+            {codeAfter}
+          </CodeBlock>
+        }
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### AutoAnimatePair
+
+| Prop        | Type        | Default  | Description            |
+| ----------- | ----------- | -------- | ---------------------- |
+| `animateId` | `string`    | required | Shared auto-animate ID |
+| `from`      | `ReactNode` | required | First slide content    |
+| `to`        | `ReactNode` | required | Second slide content   |
+| `easing`    | `string`    | -        | Animation easing       |
+| `duration`  | `number`    | -        | Animation duration     |
+| `notes`     | `string`    | -        | Speaker notes          |

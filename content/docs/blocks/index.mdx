@@ -1,0 +1,26 @@
+---
+title: Blocks
+description: Pre-built slide deck templates for common presentation types.
+---
+
+slidecn blocks are reusable slide deck templates. Import the array of slides and wrap them in your own `<Deck>`:
+
+```tsx
+import { Deck } from "@revealjs/react";
+import { PitchDeck } from "@/components/slides/blocks/pitch-deck";
+
+export function MyPresentation() {
+  return (
+    <Deck>
+      <PitchDeck />
+    </Deck>
+  );
+}
+```
+
+## Available Blocks
+
+- [Pitch Deck](/docs/blocks/pitch-deck) — 7-slide investor pitch
+- [Tech Talk](/docs/blocks/tech-talk) — 8-slide technical presentation
+- [Product Demo](/docs/blocks/product-demo) — 6-slide product showcase
+- [Weekly Report](/docs/blocks/weekly-report) — 5-slide team update

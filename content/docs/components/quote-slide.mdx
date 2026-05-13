@@ -1,0 +1,78 @@
+---
+title: Quote Slide
+description: A quote/citation slide with minimal, large, and accent variants.
+---
+
+<ComponentPreview name="quote-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/quote-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/quote-slide.tsx"
+  title="components/slidecn/quote-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import QuoteSlide from "@/components/slides/quote-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <QuoteSlide
+        quote="Innovation distinguishes between a leader and a follower."
+        attribution="Steve Jobs"
+        source="Apple Keynote, 2007"
+        variant="accent"
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### QuoteSlide
+
+| Prop          | Type                               | Default     | Description    |
+| ------------- | ---------------------------------- | ----------- | -------------- |
+| `quote`       | `string`                           | required    | The quote text |
+| `attribution` | `string`                           | -           | Quote author   |
+| `source`      | `string`                           | -           | Source context |
+| `variant`     | `"minimal" \| "large" \| "accent"` | `"minimal"` | Visual style   |
+| `notes`       | `string`                           | -           | Speaker notes  |

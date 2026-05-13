@@ -1,0 +1,101 @@
+---
+title: Timeline Slide
+description: A timeline slide with horizontal or vertical direction and optional animations.
+---
+
+<ComponentPreview>
+
+<TimelineSlide
+  title="Project Timeline"
+  direction="horizontal"
+  steps={[
+    { label: "Q1", description: "Research" },
+    { label: "Q2", description: "Development" },
+    { label: "Q3", description: "Launch" },
+  ]}
+/>
+
+</ComponentPreview>
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/timeline-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/timeline-slide.tsx"
+  title="components/slidecn/timeline-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import TimelineSlide from "@/components/slides/timeline-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <TimelineSlide
+        title="Roadmap"
+        direction="vertical"
+        animated
+        steps={[
+          { label: "Phase 1", description: "MVP release" },
+          { label: "Phase 2", description: "Beta testing" },
+          { label: "Phase 3", description: "Public launch" },
+        ]}
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### TimelineSlide
+
+| Prop        | Type                         | Default        | Description                |
+| ----------- | ---------------------------- | -------------- | -------------------------- |
+| `title`     | `string`                     | -              | Slide heading              |
+| `steps`     | `TimelineStep[]`             | required       | Timeline steps             |
+| `direction` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction           |
+| `animated`  | `boolean`                    | `false`        | Enable fragment animations |
+| `notes`     | `string`                     | -              | Speaker notes              |
+
+### TimelineStep
+
+| Field         | Type     | Description      |
+| ------------- | -------- | ---------------- |
+| `label`       | `string` | Step label       |
+| `description` | `string` | Step description |

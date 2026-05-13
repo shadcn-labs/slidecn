@@ -1,0 +1,34 @@
+---
+title: Product Demo
+description: A 6-slide product demo template for showcasing features and metrics.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/product-demo.json
+```
+
+## Usage
+
+```tsx
+import { Deck } from "@revealjs/react";
+import { ProductDemo } from "@/components/slides/blocks/product-demo";
+
+export function MyDemo() {
+  return (
+    <Deck>
+      <ProductDemo />
+    </Deck>
+  );
+}
+```
+
+## Slides
+
+1. **Title** — Product name and tagline
+2. **Features** — Animated feature list
+3. **Screenshot** — Full-bleed product image
+4. **Comparison** — Table comparison vs competitors
+5. **Metrics** — Trust metrics row
+6. **CTA** — Call to action

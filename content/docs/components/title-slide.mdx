@@ -1,0 +1,83 @@
+---
+title: Title Slide
+description: A presentation title slide component with configurable alignment and metadata.
+---
+
+<ComponentPreview name="title-slide-demo" hideCode />
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/title-slide
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/title-slide.tsx"
+  title="components/slidecn/title-slide.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import TitleSlide from "@/components/slides/title-slide";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <TitleSlide
+        eyebrow="Pitch Deck"
+        title="Acme Corp"
+        subtitle="The future of X"
+        author="Jane Smith"
+        date="2024"
+        align="center"
+        notes="Welcome everyone!"
+      />
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### TitleSlide
+
+| Prop       | Type                 | Default    | Description                           |
+| ---------- | -------------------- | ---------- | ------------------------------------- |
+| `eyebrow`  | `string`             | -          | Small uppercase label above the title |
+| `title`    | `string`             | required   | Main heading text                     |
+| `subtitle` | `string`             | -          | Subtitle below the title              |
+| `author`   | `string`             | -          | Author name displayed at bottom       |
+| `date`     | `string`             | -          | Date displayed at bottom              |
+| `align`    | `"center" \| "left"` | `"center"` | Content alignment                     |
+| `notes`    | `string`             | -          | Speaker notes                         |

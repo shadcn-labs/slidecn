@@ -1,0 +1,68 @@
+---
+title: Fit Text
+description: Automatically resizes text to fill the available space using r-fit-text.
+---
+
+### Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @slidecn/fit-text
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @revealjs/react
+```
+
+<Step>Copy the component source into your project.</Step>
+
+<ComponentSource
+  src="registry/slidecn/ui/fit-text.tsx"
+  title="components/slidecn/fit-text.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import FitText from "@/components/slides/fit-text";
+
+function MyPresentation() {
+  return (
+    <Deck>
+      <FitText as="h1">Big Impact Heading</FitText>
+    </Deck>
+  );
+}
+```
+
+## API Reference
+
+### FitText
+
+| Prop       | Type                          | Default  | Description            |
+| ---------- | ----------------------------- | -------- | ---------------------- |
+| `children` | `string`                      | required | Text content           |
+| `as`       | `keyof JSX.IntrinsicElements` | `"h2"`   | HTML element to render |

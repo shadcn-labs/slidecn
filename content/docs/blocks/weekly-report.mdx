@@ -1,0 +1,33 @@
+---
+title: Weekly Report
+description: A 5-slide weekly report template for team updates.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://slidecn.dev/r/weekly-report.json
+```
+
+## Usage
+
+```tsx
+import { Deck } from "@revealjs/react";
+import { WeeklyReport } from "@/components/slides/blocks/weekly-report";
+
+export function TeamWeeklyUpdate() {
+  return (
+    <Deck>
+      <WeeklyReport />
+    </Deck>
+  );
+}
+```
+
+## Slides
+
+1. **Title** — Report title and date range
+2. **KPIs** — Grid of 4 key metrics
+3. **Timeline** — Horizontal animated timeline
+4. **Wins & Blockers** — Split slide
+5. **Next Week** — Ordered priority list
