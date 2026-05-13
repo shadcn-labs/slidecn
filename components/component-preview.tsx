@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { ComponentSource } from "@/components/component-source";
+import { demos } from "@/examples/__index";
 
 export const ComponentPreview = ({
   name,
@@ -14,9 +15,13 @@ export const ComponentPreview = ({
   title?: string;
   children?: ReactNode;
   hideCode?: boolean;
-}) => (
-  <>
-    {children}
-    {!hideCode && <ComponentSource name={name} src={src} title={title} />}
-  </>
-);
+}) => {
+  const DemoComponent = name ? demos[name] : undefined;
+
+  return (
+    <>
+      {DemoComponent ? <DemoComponent /> : children}
+      {!hideCode && <ComponentSource name={name} src={src} title={title} />}
+    </>
+  );
+};
