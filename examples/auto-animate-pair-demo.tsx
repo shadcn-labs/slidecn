@@ -21,26 +21,24 @@ const codeAfter = `function fibonacci(n: number): number {
   return dp[n];
 }`;
 
-export const AutoAnimatePairPreview = () => (
-  <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">
-    <Deck config={{ embedded: true }}>
-      <AutoAnimatePair
-        animateId="code-transform"
-        from={
-          <ContentSlide title="Before">
-            <CodeBlock language="typescript" autoAnimateId="code-transform">
-              {codeBefore}
-            </CodeBlock>
-          </ContentSlide>
-        }
-        to={
-          <ContentSlide title="After">
-            <CodeBlock language="typescript" autoAnimateId="code-transform">
-              {codeAfter}
-            </CodeBlock>
-          </ContentSlide>
-        }
-      />
-    </Deck>
-  </div>
+export const AutoAnimatePairDemo = () => (
+  <Deck config={{ embedded: true }}>
+    <AutoAnimatePair
+      animateId="code-transform"
+      from={
+        <ContentSlide title="Before">
+          <CodeBlock language="typescript" autoAnimateId="code-transform">
+            {codeBefore}
+          </CodeBlock>
+        </ContentSlide>
+      }
+      to={
+        <ContentSlide title="After">
+          <CodeBlock language="typescript" autoAnimateId="code-transform">
+            {codeAfter}
+          </CodeBlock>
+        </ContentSlide>
+      }
+    />
+  </Deck>
 );

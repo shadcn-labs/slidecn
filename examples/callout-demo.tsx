@@ -2,7 +2,7 @@
 
 import { Callout } from "@/registry/slidecn/ui/callout";
 
-export const CalloutPreview = () => (
+export const CalloutDemo = () => (
   <div className="flex flex-col gap-4">
     <Callout variant="info" title="Note">
       Here is some important information.

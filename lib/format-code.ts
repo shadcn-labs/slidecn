@@ -49,6 +49,16 @@ export const formatCode = async (code: string) => {
     "@/components/slidecn/"
   );
 
+  formattedCode = formattedCode.replaceAll(
+    "@/registry/slidecn/blocks/",
+    "@/components/slidecn/blocks/"
+  );
+
+  formattedCode = formattedCode.replaceAll(
+    "@/registry/slidecn/themes/",
+    "@/components/slidecn/themes/"
+  );
+
   formattedCode = formattedCode.replaceAll("export default", "export");
 
   try {

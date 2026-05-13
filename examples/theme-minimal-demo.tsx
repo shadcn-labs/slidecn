@@ -5,14 +5,15 @@ import { Deck } from "@revealjs/react";
 import { TitleSlide } from "@/registry/slidecn/ui/title-slide";
 
 import "reveal.js/reveal.css";
+import "@/registry/slidecn/themes/theme-minimal.css";
 
-export const TitleSlideDemo = () => (
+export const ThemeMinimalDemo = () => (
   <Deck config={{ embedded: true }}>
     <TitleSlide
-      eyebrow="Chapter 1"
-      title="Getting Started"
-      subtitle="Everything you need to build beautiful slides"
-      author="Jane Smith"
+      eyebrow="Minimal Theme"
+      title="Less is More"
+      subtitle="Generous typography meets clean design"
+      author="slidecn"
       date="2024"
     />
   </Deck>

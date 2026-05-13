@@ -20,7 +20,9 @@ export const ComponentPreview = ({
 
   return (
     <>
-      {DemoComponent ? <DemoComponent /> : children}
+      <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">
+        {DemoComponent ? <DemoComponent /> : children}
+      </div>
       {!hideCode && <ComponentSource name={name} src={src} title={title} />}
     </>
   );

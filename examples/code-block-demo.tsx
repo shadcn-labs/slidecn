@@ -12,12 +12,10 @@ const code = `function greet(name: string): string {
 
 console.log(greet("World"));`;
 
-export const CodeBlockPreview = () => (
-  <div className="relative h-[400px] w-full overflow-hidden rounded-lg border">
-    <Deck config={{ embedded: true }}>
-      <CodeBlock language="typescript" filename="hello.ts">
-        {code}
-      </CodeBlock>
-    </Deck>
-  </div>
+export const CodeBlockDemo = () => (
+  <Deck config={{ embedded: true }}>
+    <CodeBlock language="typescript" filename="hello.ts">
+      {code}
+    </CodeBlock>
+  </Deck>
 );
