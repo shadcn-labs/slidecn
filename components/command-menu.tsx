@@ -45,7 +45,7 @@ import { Kbd } from "./ui/kbd";
 type DocUrlKind =
   | { kind: "theme"; slug: string }
   | { kind: "component"; slug: string }
-  | { kind: "template"; slug: string }
+  | { kind: "block"; slug: string }
   | { kind: "page" };
 
 const GROUP_HEADING_CLS =
@@ -61,9 +61,9 @@ const parseDocPageUrl = (url: string): DocUrlKind => {
   if (componentsIdx !== -1 && parts[componentsIdx + 1]) {
     return { kind: "component", slug: parts.at(-1) ?? "" };
   }
-  const templatesIdx = parts.indexOf("templates");
-  if (templatesIdx !== -1 && parts[templatesIdx + 1]) {
-    return { kind: "template", slug: parts.at(-1) ?? "" };
+  const blocksIdx = parts.indexOf("blocks");
+  if (blocksIdx !== -1 && parts[blocksIdx + 1]) {
+    return { kind: "block", slug: parts.at(-1) ?? "" };
   }
   return { kind: "page" };
 };
@@ -99,7 +99,7 @@ const DocPageLeadingIcon = ({ parsed }: { parsed: DocUrlKind }) => {
   if (parsed.kind === "component") {
     return <CircleDashedIcon />;
   }
-  if (parsed.kind === "template") {
+  if (parsed.kind === "block") {
     return <SquareDashedIcon />;
   }
   return <ArrowRightIcon />;
@@ -213,7 +213,7 @@ export const CommandMenu = ({
         );
         return;
       }
-      if (parsed.kind === "component" || parsed.kind === "template") {
+      if (parsed.kind === "component" || parsed.kind === "block") {
         setCopyPayload(
           `${packageManager} dlx shadcn@latest add ${SITE.REGISTRY}/${parsed.slug}`
         );
