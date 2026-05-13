@@ -18,7 +18,7 @@ const DOCS_MARKDOWN_LINK_REGEX = /\]\((\/docs(?:\/[^)#\s]+)?)(#[^)]+)?\)/g;
 const IMPORT_REGEX = /^import\s.+$/gm;
 const JSX_WRAPPER_REGEX = /^<\/?[A-Z][^>]*>\s*$/gm;
 const MANY_BLANK_LINES_REGEX = /\n{3,}/g;
-const PROTECTED_CODE_FENCE_REGEX = /%%STARTERCN_CODE_FENCE_(\d+)%%/g;
+const PROTECTED_CODE_FENCE_REGEX = /%%SLIDECN_CODE_FENCE_(\d+)%%/g;
 const SELF_CLOSING_COMPONENTS_LIST_REGEX =
   /<ComponentsList(?:\s+folderName="([^"]+)")?\s*\/>/g;
 
@@ -29,7 +29,7 @@ const protectCodeFences = (content: string) => {
   const fences: string[] = [];
   const protectedContent = content.replaceAll(CODE_FENCE_REGEX, (match) => {
     const index = fences.push(match) - 1;
-    return `%%STARTERCN_CODE_FENCE_${index}%%`;
+    return `%%SLIDECN_CODE_FENCE_${index}%%`;
   });
 
   return {

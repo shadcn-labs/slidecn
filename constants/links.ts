@@ -1,7 +1,7 @@
 export const GITHUB = {
   branch: "main",
   repo: "slidecn",
-  user: "Aniket-508",
+  user: "shadcn-labs",
 } as const;
 
 const GITHUB_URL = `https://github.com/${GITHUB.user}/${GITHUB.repo}`;
