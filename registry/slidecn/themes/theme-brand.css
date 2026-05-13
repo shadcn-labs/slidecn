@@ -1,0 +1,48 @@
+/* slidecn — brand theme
+ *
+ * Starter template: replace the placeholder variables below with your brand colors.
+ *
+ *   --brand-primary:    your primary brand color
+ *   --brand-secondary:  your secondary brand color
+ *   --brand-accent:     your accent/highlight color
+ *   --brand-bg:         your background color
+ *   --brand-text:       your text color
+ *
+ * Usage example (uncomment and replace values):
+ *
+ *   --brand-primary: #6366f1;
+ *   --brand-secondary: #8b5cf6;
+ *   --brand-accent: #f59e0b;
+ *   --brand-bg: #0f0f1a;
+ *   --brand-text: #f8fafc;
+ */
+
+.reveal {
+  /* --brand-primary: #000000; */
+  /* --brand-secondary: #000000; */
+  /* --brand-accent: #000000; */
+  /* --brand-bg: #ffffff; */
+  /* --brand-text: #000000; */
+
+  --r-background-color: var(--brand-bg, hsl(0 0% 100%));
+  --r-main-color: var(--brand-text, hsl(240 10% 3.9%));
+  --r-muted-color: color-mix(
+    in srgb,
+    var(--brand-text, hsl(240 10% 3.9%)) 60%,
+    transparent
+  );
+  --r-heading-color: var(--brand-primary, hsl(240 10% 3.9%));
+  --r-link-color: var(--brand-secondary, hsl(240 5.9% 10%));
+  --r-link-color-hover: var(--brand-primary, hsl(240 5.9% 30%));
+  --r-selection-background-color: color-mix(
+    in srgb,
+    var(--brand-primary, hsl(240 5.9% 10%)) 15%,
+    transparent
+  );
+  --r-main-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --r-heading-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --r-code-font: var(--font-mono, ui-monospace, monospace);
+  --r-heading-font-weight: 600;
+  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: -0.02em;
+}

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@revealjs/react':
+        specifier: ^0.2.1
+        version: 0.2.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(reveal.js@6.0.1)
       '@tailwindcss/postcss':
         specifier: ^4.2.4
         version: 4.2.4
@@ -71,6 +74,9 @@ importers:
       rehype-pretty-code:
         specifier: ^0.14.3
         version: 0.14.3(shiki@4.0.2)
+      reveal.js:
+        specifier: ^6.0.1
+        version: 6.0.1
       shiki:
         specifier: ^4.0.2
         version: 4.0.2
@@ -80,6 +86,9 @@ importers:
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
+      ts-morph:
+        specifier: ^26.0.0
+        version: 26.0.0
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -1735,6 +1744,13 @@ packages:
 
   '@radix-ui/rect@1.1.1':
     resolution: {integrity: sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==}
+
+  '@revealjs/react@0.2.1':
+    resolution: {integrity: sha512-bEivSQ1W0WpiSUPd4KNLkFGSkdywuno2jjzBHQCO+SN3ChFWP6Y3Z2OLRih3Qeel5k1bwKsSsmr5AMUMA5ZdyQ==}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+      reveal.js: '>=5'
 
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
@@ -3660,6 +3676,9 @@ packages:
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  reveal.js@6.0.1:
+    resolution: {integrity: sha512-9eacArNIgqO2HGWOK+93gJNn+gvdGDVbSq+i2u3Ja9kjiHps0XNLpgYTZTYjKRH91uXy3clGimeGiw4umHG/tg==}
 
   router@2.2.0:
     resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
@@ -5587,6 +5606,12 @@ snapshots:
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
 
   '@radix-ui/rect@1.1.1': {}
+
+  '@revealjs/react@0.2.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(reveal.js@6.0.1)':
+    dependencies:
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      reveal.js: 6.0.1
 
   '@sec-ant/readable-stream@0.4.1': {}
 
@@ -7801,6 +7826,8 @@ snapshots:
   rettime@0.11.8: {}
 
   reusify@1.1.0: {}
+
+  reveal.js@6.0.1: {}
 
   router@2.2.0:
     dependencies:

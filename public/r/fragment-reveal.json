@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fragment-reveal",
+  "title": "Fragment Reveal",
+  "description": "Steps through children one by one using fragment animations.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/fragment-reveal.tsx",
+      "content": "\"use client\";\n\nimport { Fragment } from \"@revealjs/react\";\nimport type { ReactNode } from \"react\";\n\nimport type { FragmentAnimation } from \"@/lib/slide-utils\";\n\ninterface FragmentRevealProps {\n  children: ReactNode[];\n  animation?: FragmentAnimation;\n  stagger?: boolean;\n}\n\nconst FragmentReveal = ({\n  children,\n  animation = \"fade-in\",\n  stagger = false,\n}: FragmentRevealProps) => (\n  <>\n    {children.map((child, i) => (\n      <Fragment key={i} animation={animation} index={stagger ? i : undefined}>\n        {child}\n      </Fragment>\n    ))}\n  </>\n);\n\nexport { FragmentReveal };\n",
+      "type": "registry:ui",
+      "target": "components/slides/fragment-reveal.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

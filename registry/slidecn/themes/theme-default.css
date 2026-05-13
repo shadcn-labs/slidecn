@@ -1,0 +1,16 @@
+/* slidecn — default theme */
+.reveal {
+  --r-background-color: hsl(0 0% 100%);
+  --r-main-color: hsl(240 10% 3.9%);
+  --r-muted-color: hsl(240 3.8% 46.1%);
+  --r-heading-color: hsl(240 10% 3.9%);
+  --r-link-color: hsl(240 5.9% 10%);
+  --r-link-color-hover: hsl(240 5.9% 30%);
+  --r-selection-background-color: hsl(240 4.8% 95.9%);
+  --r-main-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --r-heading-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --r-code-font: var(--font-mono, ui-monospace, monospace);
+  --r-heading-font-weight: 600;
+  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: -0.02em;
+}

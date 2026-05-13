@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fit-text",
+  "title": "Fit Text",
+  "description": "Automatically resizes text to fill the available space using r-fit-text.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/fit-text.tsx",
+      "content": "\"use client\";\n\nimport type { JSX } from \"react\";\n\ninterface FitTextProps {\n  children: string;\n  as?: keyof JSX.IntrinsicElements;\n}\n\nconst FitText = ({ children, as: As = \"h2\" }: FitTextProps) => {\n  const Component = As as keyof JSX.IntrinsicElements;\n\n  return <Component className=\"r-fit-text\">{children}</Component>;\n};\n\nexport { FitText };\n",
+      "type": "registry:ui",
+      "target": "components/slides/fit-text.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "weekly-report",
+  "title": "Weekly Report",
+  "description": "A 5-slide weekly report template: KPIs, timeline, wins/blockers, and next week plan.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [
+    "title-slide",
+    "stat-slide",
+    "timeline-slide",
+    "split-slide",
+    "list-slide"
+  ],
+  "files": [
+    {
+      "path": "registry/slidecn/blocks/weekly-report.tsx",
+      "content": "// Requires: @revealjs/react reveal.js\n// Returns an array of slide elements for a 5-slide weekly report\n// Wrap in <Deck> in your app\n\nimport { TitleSlide } from \"@/registry/slidecn/ui/title-slide\";\nimport { StatSlide } from \"@/registry/slidecn/ui/stat-slide\";\nimport { TimelineSlide } from \"@/registry/slidecn/ui/timeline-slide\";\nimport { SplitSlide } from \"@/registry/slidecn/ui/split-slide\";\nimport { ListSlide } from \"@/registry/slidecn/ui/list-slide\";\n\nexport const WeeklyReport = [\n  <TitleSlide\n    key=\"title\"\n    eyebrow=\"Weekly Report\"\n    title=\"Engineering Update\"\n    subtitle=\"May 6 – May 12, 2024\"\n    author=\"Engineering Team\"\n    date=\"2024\"\n  />,\n  <StatSlide\n    key=\"kpis\"\n    title=\"Key Metrics\"\n    layout=\"grid\"\n    stats={[\n      { value: \"12\", label: \"PRs merged\" },\n      { value: \"3\", label: \"Bugs fixed\" },\n      { value: \"89%\", label: \"Test coverage\" },\n      { value: \"4.2s\", label: \"Avg response time\" },\n    ]}\n  />,\n  <TimelineSlide\n    key=\"timeline\"\n    title=\"Weekly Timeline\"\n    direction=\"horizontal\"\n    animated\n    steps={[\n      { label: \"Mon\", description: \"API refactor\" },\n      { label: \"Tue\", description: \"Code review\" },\n      { label: \"Wed\", description: \"Integration tests\" },\n      { label: \"Thu\", description: \"Deploy v2.1\" },\n      { label: \"Fri\", description: \"Retrospective\" },\n    ]}\n  />,\n  <SplitSlide\n    key=\"wins-blockers\"\n    title=\"Wins & Blockers\"\n    left={\n      <ListSlide\n        title=\"Wins\"\n        items={[\n          { text: \"Shipped v2.1 on time\" },\n          { text: \"Reduced p95 latency by 40%\" },\n          { text: \"Onboarded 2 new contributors\" },\n        ]}\n      />\n    }\n    right={\n      <ListSlide\n        title=\"Blockers\"\n        items={[\n          { text: \"Awaiting design review for dashboard\" },\n          { text: \"Third-party API rate limits\" },\n        ]}\n      />\n    }\n  />,\n  <ListSlide\n    key=\"next-week\"\n    title=\"Next Week\"\n    ordered\n    items={[\n      { text: \"Complete dashboard redesign\" },\n      { text: \"Performance audit\" },\n      { text: \"Write migration guide\" },\n    ]}\n  />,\n];\n",
+      "type": "registry:block"
+    }
+  ],
+  "type": "registry:block"
+}

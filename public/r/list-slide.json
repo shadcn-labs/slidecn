@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list-slide",
+  "title": "List Slide",
+  "description": "An ordered or unordered list slide with optional fragment animations.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/list-slide.tsx",
+      "content": "\"use client\";\n\nimport { Fragment, Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\n\nimport type { FragmentAnimation } from \"@/lib/slide-utils\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ListItem {\n  text: string;\n  subtext?: string;\n}\n\ninterface ListSlideProps extends SlideProps {\n  title?: string;\n  items: ListItem[];\n  ordered?: boolean;\n  animated?: boolean;\n  animation?: FragmentAnimation;\n  notes?: string;\n}\n\nconst ListSlide = ({\n  title,\n  items,\n  ordered = false,\n  animated = false,\n  animation,\n  className,\n  notes,\n  ...slideProps\n}: ListSlideProps) => {\n  const Tag = ordered ? \"ol\" : \"ul\";\n\n  return (\n    <Slide className={cn(className)} {...slideProps}>\n      <div className=\"flex h-full flex-col gap-6\">\n        {title && (\n          <h2 className=\"text-3xl font-bold tracking-tight\">{title}</h2>\n        )}\n        <Tag\n          className={cn(\n            \"flex flex-col gap-3\",\n            ordered ? \"list-decimal pl-6\" : \"list-disc pl-6\"\n          )}\n        >\n          {items.map((item, i) => {\n            const content = (\n              <>\n                <span>{item.text}</span>\n                {item.subtext && (\n                  <span className=\"block text-sm text-muted-foreground\">\n                    {item.subtext}\n                  </span>\n                )}\n              </>\n            );\n\n            if (animated) {\n              return (\n                <Fragment key={i} as=\"li\" animation={animation} index={i}>\n                  {content}\n                </Fragment>\n              );\n            }\n\n            return <li key={i}>{content}</li>;\n          })}\n        </Tag>\n      </div>\n      {notes && <aside className=\"notes\">{notes}</aside>}\n    </Slide>\n  );\n};\n\nexport { ListSlide };\n",
+      "type": "registry:ui",
+      "target": "components/slides/list-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

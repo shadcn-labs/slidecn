@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-block",
+  "title": "Code Block",
+  "description": "A syntax-highlighted code block with filename, line numbers, and copy button.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js",
+    "sonner",
+    "@web-kits/audio"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/code-block.tsx",
+      "content": "\"use client\";\n\nimport { Code } from \"@revealjs/react\";\nimport type { CodeProps } from \"@revealjs/react\";\nimport { defineSound } from \"@web-kits/audio\";\nimport { FileCode, Copy } from \"lucide-react\";\nimport { toast } from \"sonner\";\n\nimport * as audio from \"@/audio/core\";\nimport { cn } from \"@/lib/utils\";\n\ninterface CodeBlockProps extends Omit<CodeProps, \"children\"> {\n  children: string;\n  language: string;\n  lineNumbers?: boolean | string;\n  filename?: string;\n  showCopy?: boolean;\n  autoAnimateId?: string;\n  startFrom?: number;\n  trim?: boolean;\n}\n\nconst CodeBlock = ({\n  children,\n  language,\n  lineNumbers,\n  filename,\n  showCopy = true,\n  autoAnimateId,\n  startFrom,\n  trim = true,\n  className,\n  ...codeProps\n}: CodeBlockProps) => {\n  const handleCopy = async () => {\n    try {\n      await navigator.clipboard.writeText(children);\n      defineSound(audio.click)();\n      toast.success(\"Copied to clipboard\");\n    } catch {\n      toast.error(\"Failed to copy\");\n    }\n  };\n\n  return (\n    <div\n      className={cn(\"overflow-hidden rounded-lg border bg-muted/50\", className)}\n    >\n      {filename && (\n        <div className=\"flex items-center gap-2 border-b bg-muted px-4 py-2 text-xs text-muted-foreground\">\n          <FileCode className=\"size-3.5\" />\n          <span>{filename}</span>\n        </div>\n      )}\n      <div className=\"relative\">\n        <pre data-id={autoAnimateId}>\n          <Code\n            language={language}\n            lineNumbers={lineNumbers}\n            startFrom={startFrom}\n            trim={trim}\n            {...codeProps}\n          >\n            {children}\n          </Code>\n        </pre>\n        {showCopy && (\n          <button\n            type=\"button\"\n            onClick={handleCopy}\n            className=\"absolute right-2 top-2 flex size-7 items-center justify-center rounded-md text-muted-foreground opacity-0 transition-opacity hover:bg-muted hover:text-foreground group-hover:opacity-100\"\n            aria-label=\"Copy code\"\n          >\n            <Copy className=\"size-3.5\" />\n          </button>\n        )}\n      </div>\n    </div>\n  );\n};\n\nexport { CodeBlock };\n",
+      "type": "registry:ui",
+      "target": "components/slides/code-block.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

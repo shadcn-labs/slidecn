@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fragment-list",
+  "title": "Fragment List",
+  "description": "A list wrapper with fragment-based reveal animations on each item.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/fragment-list.tsx",
+      "content": "\"use client\";\n\nimport { Fragment } from \"@revealjs/react\";\nimport type { ReactNode } from \"react\";\n\nimport type { FragmentAnimation } from \"@/lib/slide-utils\";\n\ninterface FragmentListProps {\n  items: ReactNode[];\n  as?: \"ul\" | \"ol\";\n  animation?: FragmentAnimation;\n  stagger?: boolean;\n}\n\nconst FragmentList = ({\n  items,\n  as: Tag = \"ul\",\n  animation = \"fade-up\",\n  stagger = false,\n}: FragmentListProps) => (\n  <Tag className=\"flex flex-col gap-3\">\n    {items.map((item, i) => (\n      <Fragment\n        key={i}\n        as=\"li\"\n        animation={animation}\n        index={stagger ? i : undefined}\n      >\n        {item}\n      </Fragment>\n    ))}\n  </Tag>\n);\n\nexport { FragmentList };\n",
+      "type": "registry:ui",
+      "target": "components/slides/fragment-list.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

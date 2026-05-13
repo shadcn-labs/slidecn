@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "title-slide",
+  "title": "Title Slide",
+  "description": "A presentation title slide with eyebrow, title, subtitle, author, and date.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/title-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst titleSlideVariants = cva(\"flex h-full flex-col\", {\n  defaultVariants: {\n    align: \"center\",\n  },\n  variants: {\n    align: {\n      center: \"items-center text-center\",\n      left: \"items-start text-left\",\n    },\n  },\n});\n\ninterface TitleSlideProps\n  extends SlideProps, VariantProps<typeof titleSlideVariants> {\n  eyebrow?: string;\n  title: string;\n  subtitle?: string;\n  author?: string;\n  date?: string;\n  notes?: string;\n}\n\nconst TitleSlide = ({\n  eyebrow,\n  title,\n  subtitle,\n  author,\n  date,\n  align,\n  className,\n  notes,\n  ...slideProps\n}: TitleSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className={cn(titleSlideVariants({ align }), \"justify-center gap-6\")}>\n      <div className=\"flex flex-col gap-4\">\n        {eyebrow && (\n          <span className=\"text-xs font-medium uppercase tracking-widest text-muted-foreground\">\n            {eyebrow}\n          </span>\n        )}\n        <h1 className=\"text-5xl font-bold tracking-tight\">{title}</h1>\n        {subtitle && (\n          <p className=\"text-xl text-muted-foreground\">{subtitle}</p>\n        )}\n      </div>\n      {(author || date) && (\n        <div className=\"mt-auto flex gap-2 text-sm text-muted-foreground\">\n          {author && <span>{author}</span>}\n          {author && date && <span aria-hidden=\"true\">·</span>}\n          {date && <span>{date}</span>}\n        </div>\n      )}\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { TitleSlide, titleSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/title-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

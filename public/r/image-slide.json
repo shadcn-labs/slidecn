@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "image-slide",
+  "title": "Image Slide",
+  "description": "A slide for displaying images with stretch, contained, or full-bleed modes.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/image-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst imageSlideVariants = cva(\"\", {\n  defaultVariants: {\n    mode: \"contained\",\n  },\n  variants: {\n    mode: {\n      contained: \"\",\n      \"full-bleed\": \"\",\n      stretch: \"\",\n    },\n  },\n});\n\ninterface ImageSlideProps\n  extends SlideProps, VariantProps<typeof imageSlideVariants> {\n  src: string;\n  alt: string;\n  caption?: string;\n  notes?: string;\n}\n\nconst ImageSlide = ({\n  src,\n  alt,\n  caption,\n  mode,\n  className,\n  notes,\n  ...slideProps\n}: ImageSlideProps) => {\n  if (mode === \"full-bleed\") {\n    return (\n      <Slide\n        className={cn(className)}\n        backgroundImage={src}\n        backgroundSize=\"cover\"\n        {...slideProps}\n      >\n        {caption && (\n          <div className=\"absolute bottom-4 left-4 rounded-lg bg-background/80 px-3 py-1.5 text-sm text-foreground backdrop-blur-sm\">\n            {caption}\n          </div>\n        )}\n        {notes && <aside className=\"notes\">{notes}</aside>}\n      </Slide>\n    );\n  }\n\n  return (\n    <Slide className={cn(className)} {...slideProps}>\n      <div className=\"flex h-full flex-col items-center justify-center gap-4\">\n        {/* eslint-disable-next-line @next/next/no-img-element */}\n        <img\n          src={src}\n          alt={alt}\n          className={cn(\n            mode === \"stretch\"\n              ? \"r-stretch\"\n              : \"mx-auto max-h-[60vh] object-contain\"\n          )}\n        />\n        {caption && <p className=\"text-sm text-muted-foreground\">{caption}</p>}\n      </div>\n      {notes && <aside className=\"notes\">{notes}</aside>}\n    </Slide>\n  );\n};\n\nexport { ImageSlide, imageSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/image-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

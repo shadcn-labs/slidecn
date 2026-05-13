@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "section-slide",
+  "title": "Section Slide",
+  "description": "A chapter divider slide with label and title.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/section-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst sectionSlideVariants = cva(\"flex h-full flex-col justify-center gap-4\", {\n  defaultVariants: {\n    variant: \"minimal\",\n  },\n  variants: {\n    variant: {\n      accent: \"border-l-4 border-primary pl-6\",\n      minimal: \"\",\n    },\n  },\n});\n\ninterface SectionSlideProps\n  extends SlideProps, VariantProps<typeof sectionSlideVariants> {\n  label?: string;\n  title: string;\n  notes?: string;\n}\n\nconst SectionSlide = ({\n  label,\n  title,\n  variant,\n  className,\n  notes,\n  ...slideProps\n}: SectionSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className={cn(sectionSlideVariants({ variant }))}>\n      {label && (\n        <span className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n          {label}\n        </span>\n      )}\n      <h2 className=\"text-4xl font-bold tracking-tight\">{title}</h2>\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { SectionSlide, sectionSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/section-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

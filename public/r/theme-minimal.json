@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-minimal",
+  "title": "Minimal Theme",
+  "description": "A minimal theme with larger base font size and tight letter-spacing.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/themes/theme-minimal.css",
+      "content": "/* slidecn — minimal theme */\n.reveal {\n  --r-background-color: hsl(0 0% 100%);\n  --r-main-color: hsl(240 10% 3.9%);\n  --r-muted-color: hsl(240 3.8% 46.1%);\n  --r-heading-color: hsl(240 10% 3.9%);\n  --r-link-color: hsl(240 5.9% 10%);\n  --r-link-color-hover: hsl(240 5.9% 30%);\n  --r-selection-background-color: hsl(240 4.8% 95.9%);\n  --r-main-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-heading-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-code-font: var(--font-mono, ui-monospace, monospace);\n  --r-main-font-size: 40px;\n  --r-heading-font-weight: 600;\n  --r-heading-text-transform: none;\n  --r-heading-letter-spacing: -0.03em;\n}\n",
+      "type": "registry:file",
+      "target": "components/slides/themes/theme-minimal.css"
+    }
+  ],
+  "type": "registry:file"
+}

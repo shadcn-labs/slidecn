@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "auto-animate-pair",
+  "title": "Auto Animate Pair",
+  "description": "Two consecutive slides with auto-animate enabled for smooth transitions between states.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/auto-animate-pair.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport type { ReactNode } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Auto-animate pair renders two consecutive slides that animate between each other.\n * The caller must place a child with `data-id={animateId}` inside both `from` and `to`\n * for the animation to trigger.\n */\ninterface AutoAnimatePairProps extends SlideProps {\n  animateId: string;\n  from: ReactNode;\n  to: ReactNode;\n  easing?: string;\n  duration?: number;\n  notes?: string;\n}\n\nconst AutoAnimatePair = ({\n  animateId,\n  from,\n  to,\n  easing,\n  duration,\n  className,\n  notes,\n  ...slideProps\n}: AutoAnimatePairProps) => (\n  <>\n    <Slide\n      className={cn(className)}\n      autoAnimate\n      autoAnimateId={animateId}\n      autoAnimateEasing={easing}\n      autoAnimateDuration={duration}\n      {...slideProps}\n    >\n      {from}\n      {notes && <aside className=\"notes\">{notes}</aside>}\n    </Slide>\n    <Slide\n      className={cn(className)}\n      autoAnimate\n      autoAnimateId={animateId}\n      autoAnimateEasing={easing}\n      autoAnimateDuration={duration}\n      {...slideProps}\n    >\n      {to}\n    </Slide>\n  </>\n);\n\nexport { AutoAnimatePair };\n",
+      "type": "registry:ui",
+      "target": "components/slides/auto-animate-pair.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

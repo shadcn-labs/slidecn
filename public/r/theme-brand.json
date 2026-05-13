@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-brand",
+  "title": "Brand Theme",
+  "description": "A brandable theme template with customizable brand color variables.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/themes/theme-brand.css",
+      "content": "/* slidecn — brand theme\n *\n * Starter template: replace the placeholder variables below with your brand colors.\n *\n *   --brand-primary:    your primary brand color\n *   --brand-secondary:  your secondary brand color\n *   --brand-accent:     your accent/highlight color\n *   --brand-bg:         your background color\n *   --brand-text:       your text color\n *\n * Usage example (uncomment and replace values):\n *\n *   --brand-primary: #6366f1;\n *   --brand-secondary: #8b5cf6;\n *   --brand-accent: #f59e0b;\n *   --brand-bg: #0f0f1a;\n *   --brand-text: #f8fafc;\n */\n\n.reveal {\n  /* --brand-primary: #000000; */\n  /* --brand-secondary: #000000; */\n  /* --brand-accent: #000000; */\n  /* --brand-bg: #ffffff; */\n  /* --brand-text: #000000; */\n\n  --r-background-color: var(--brand-bg, hsl(0 0% 100%));\n  --r-main-color: var(--brand-text, hsl(240 10% 3.9%));\n  --r-muted-color: color-mix(\n    in srgb,\n    var(--brand-text, hsl(240 10% 3.9%)) 60%,\n    transparent\n  );\n  --r-heading-color: var(--brand-primary, hsl(240 10% 3.9%));\n  --r-link-color: var(--brand-secondary, hsl(240 5.9% 10%));\n  --r-link-color-hover: var(--brand-primary, hsl(240 5.9% 30%));\n  --r-selection-background-color: color-mix(\n    in srgb,\n    var(--brand-primary, hsl(240 5.9% 10%)) 15%,\n    transparent\n  );\n  --r-main-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-heading-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-code-font: var(--font-mono, ui-monospace, monospace);\n  --r-heading-font-weight: 600;\n  --r-heading-text-transform: none;\n  --r-heading-letter-spacing: -0.02em;\n}\n",
+      "type": "registry:file",
+      "target": "components/slides/themes/theme-brand.css"
+    }
+  ],
+  "type": "registry:file"
+}

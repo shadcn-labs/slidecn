@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "split-slide",
+  "title": "Split Slide",
+  "description": "A two-column split layout slide with configurable ratio.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/split-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport type { ReactNode } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst splitSlideVariants = cva(\"grid h-full gap-8\", {\n  defaultVariants: {\n    ratio: \"equal\",\n  },\n  variants: {\n    ratio: {\n      equal: \"grid-cols-[1fr_1fr]\",\n      \"left-wide\": \"grid-cols-[2fr_1fr]\",\n      \"right-wide\": \"grid-cols-[1fr_2fr]\",\n    },\n  },\n});\n\ninterface SplitSlideProps\n  extends SlideProps, VariantProps<typeof splitSlideVariants> {\n  title?: string;\n  left: ReactNode;\n  right: ReactNode;\n  divider?: boolean;\n  notes?: string;\n}\n\nconst SplitSlide = ({\n  title,\n  left,\n  right,\n  ratio,\n  divider,\n  className,\n  notes,\n  ...slideProps\n}: SplitSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className=\"flex h-full flex-col gap-6\">\n      {title && <h2 className=\"text-3xl font-bold tracking-tight\">{title}</h2>}\n      <div className={cn(splitSlideVariants({ ratio }), \"flex-1\")}>\n        <div>{left}</div>\n        {divider && (\n          <div className=\"hidden md:block\" aria-hidden=\"true\">\n            <div className=\"mx-auto h-full w-px bg-border\" />\n          </div>\n        )}\n        <div>{right}</div>\n      </div>\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { SplitSlide, splitSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/split-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

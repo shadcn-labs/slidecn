@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notes",
+  "title": "Notes",
+  "description": "Speaker notes for reveal.js presentations.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/notes.tsx",
+      "content": "interface NotesProps {\n  children: string;\n  markdown?: boolean;\n}\n\nconst Notes = ({ children, markdown }: NotesProps) => (\n  <aside className=\"notes\" data-markdown={markdown || undefined}>\n    {children}\n  </aside>\n);\n\nexport { Notes };\n",
+      "type": "registry:ui",
+      "target": "components/slides/notes.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

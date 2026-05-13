@@ -1,17 +1,437 @@
 {
-  "name": "shadcn/registry-kit",
-  "homepage": "https://shadcn-registry-kit.vercel.app",
+  "name": "slidecn",
+  "homepage": "https://slidecn.dev",
   "items": [
     {
-      "name": "your-component",
+      "name": "title-slide",
       "type": "registry:ui",
-      "title": "Your Component",
-      "description": "A placeholder component. Replace this with your custom shadcn component.",
+      "title": "Title Slide",
+      "description": "A presentation title slide with eyebrow, title, subtitle, author, and date.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
       "files": [
         {
-          "path": "registry/new-york/your-component.tsx",
+          "path": "registry/slidecn/ui/title-slide.tsx",
           "type": "registry:ui",
-          "target": "components/ui/your-component.tsx"
+          "target": "components/slides/title-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-slide",
+      "type": "registry:ui",
+      "title": "Section Slide",
+      "description": "A chapter divider slide with label and title.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/section-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/section-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-slide",
+      "type": "registry:ui",
+      "title": "Content Slide",
+      "description": "A general purpose content slide with multiple layout options.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/content-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/content-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-slide",
+      "type": "registry:ui",
+      "title": "Split Slide",
+      "description": "A two-column split layout slide with configurable ratio.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/split-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/split-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-slide",
+      "type": "registry:ui",
+      "title": "Image Slide",
+      "description": "A slide for displaying images with stretch, contained, or full-bleed modes.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/image-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/image-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-slide",
+      "type": "registry:ui",
+      "title": "Stat Slide",
+      "description": "A statistics-focused slide with single, row, or grid layouts.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/stat-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/stat-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "quote-slide",
+      "type": "registry:ui",
+      "title": "Quote Slide",
+      "description": "A quote/citation slide with minimal, large, and accent variants.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/quote-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/quote-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "list-slide",
+      "type": "registry:ui",
+      "title": "List Slide",
+      "description": "An ordered or unordered list slide with optional fragment animations.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/list-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/list-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison-slide",
+      "type": "registry:ui",
+      "title": "Comparison Slide",
+      "description": "A side-by-side comparison slide with columns or table variant.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/comparison-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/comparison-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline-slide",
+      "type": "registry:ui",
+      "title": "Timeline Slide",
+      "description": "A timeline slide with horizontal or vertical direction and optional animations.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/timeline-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/timeline-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-slide",
+      "type": "registry:ui",
+      "title": "Team Slide",
+      "description": "A team member showcase slide with avatars, roles, and bios.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/team-slide.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/team-slide.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "A syntax-highlighted code block with filename, line numbers, and copy button.",
+      "dependencies": [
+        "@revealjs/react",
+        "reveal.js",
+        "sonner",
+        "@web-kits/audio"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/code-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fragment-list",
+      "type": "registry:ui",
+      "title": "Fragment List",
+      "description": "A list wrapper with fragment-based reveal animations on each item.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/fragment-list.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/fragment-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fragment-reveal",
+      "type": "registry:ui",
+      "title": "Fragment Reveal",
+      "description": "Steps through children one by one using fragment animations.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/fragment-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/fragment-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fit-text",
+      "type": "registry:ui",
+      "title": "Fit Text",
+      "description": "Automatically resizes text to fill the available space using r-fit-text.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/fit-text.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/fit-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "callout",
+      "type": "registry:ui",
+      "title": "Callout",
+      "description": "An info, warning, tip, or danger callout box with icon and title.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/callout.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/callout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notes",
+      "type": "registry:ui",
+      "title": "Notes",
+      "description": "Speaker notes for reveal.js presentations.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/notes.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/notes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "auto-animate-pair",
+      "type": "registry:ui",
+      "title": "Auto Animate Pair",
+      "description": "Two consecutive slides with auto-animate enabled for smooth transitions between states.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/auto-animate-pair.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/auto-animate-pair.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stack-reveal",
+      "type": "registry:ui",
+      "title": "Stack Reveal",
+      "description": "A thin typed wrapper over the reveal.js Stack component.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/ui/stack-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/slides/stack-reveal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pitch-deck",
+      "type": "registry:block",
+      "title": "Pitch Deck",
+      "description": "A 7-slide pitch deck template: problem, solution, how it works, traction, team, and CTA.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [
+        "title-slide",
+        "split-slide",
+        "stat-slide",
+        "list-slide",
+        "timeline-slide",
+        "image-slide",
+        "team-slide"
+      ],
+      "files": [
+        {
+          "path": "registry/slidecn/blocks/pitch-deck.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "tech-talk",
+      "type": "registry:block",
+      "title": "Tech Talk",
+      "description": "An 8-slide technical talk template with code examples, auto-animate transitions, and benchmark results.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [
+        "title-slide",
+        "list-slide",
+        "section-slide",
+        "content-slide",
+        "auto-animate-pair",
+        "code-block"
+      ],
+      "files": [
+        {
+          "path": "registry/slidecn/blocks/tech-talk.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "product-demo",
+      "type": "registry:block",
+      "title": "Product Demo",
+      "description": "A 6-slide product demo template: features, screenshot, comparison, metrics, and CTA.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [
+        "title-slide",
+        "list-slide",
+        "image-slide",
+        "comparison-slide",
+        "stat-slide"
+      ],
+      "files": [
+        {
+          "path": "registry/slidecn/blocks/product-demo.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "weekly-report",
+      "type": "registry:block",
+      "title": "Weekly Report",
+      "description": "A 5-slide weekly report template: KPIs, timeline, wins/blockers, and next week plan.",
+      "dependencies": ["@revealjs/react", "reveal.js"],
+      "registryDependencies": [
+        "title-slide",
+        "stat-slide",
+        "timeline-slide",
+        "split-slide",
+        "list-slide"
+      ],
+      "files": [
+        {
+          "path": "registry/slidecn/blocks/weekly-report.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "theme-default",
+      "type": "registry:file",
+      "title": "Default Theme",
+      "description": "The default slidecn theme with light colors and neutral tones.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/themes/theme-default.css",
+          "type": "registry:file",
+          "target": "components/slides/themes/theme-default.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-dark",
+      "type": "registry:file",
+      "title": "Dark Theme",
+      "description": "A dark theme for slidecn presentations.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/themes/theme-dark.css",
+          "type": "registry:file",
+          "target": "components/slides/themes/theme-dark.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-minimal",
+      "type": "registry:file",
+      "title": "Minimal Theme",
+      "description": "A minimal theme with larger base font size and tight letter-spacing.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/themes/theme-minimal.css",
+          "type": "registry:file",
+          "target": "components/slides/themes/theme-minimal.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-brand",
+      "type": "registry:file",
+      "title": "Brand Theme",
+      "description": "A brandable theme template with customizable brand color variables.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/slidecn/themes/theme-brand.css",
+          "type": "registry:file",
+          "target": "components/slides/themes/theme-brand.css"
         }
       ]
     }

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "callout",
+  "title": "Callout",
+  "description": "An info, warning, tip, or danger callout box with icon and title.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/callout.tsx",
+      "content": "\"use client\";\n\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { Info, AlertTriangle, Lightbulb, AlertCircle } from \"lucide-react\";\nimport type { ReactNode } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst calloutVariants = cva(\"rounded-lg border-l-4 p-4\", {\n  defaultVariants: {\n    variant: \"info\",\n  },\n  variants: {\n    variant: {\n      danger: \"border-l-red-500 bg-red-500/5\",\n      info: \"border-l-blue-500 bg-blue-500/5\",\n      tip: \"border-l-emerald-500 bg-emerald-500/5\",\n      warning: \"border-l-amber-500 bg-amber-500/5\",\n    },\n  },\n});\n\nconst icons = {\n  danger: AlertCircle,\n  info: Info,\n  tip: Lightbulb,\n  warning: AlertTriangle,\n};\n\ninterface CalloutProps extends VariantProps<typeof calloutVariants> {\n  title?: string;\n  children: ReactNode;\n  icon?: boolean;\n}\n\nconst Callout = ({\n  variant = \"info\",\n  title,\n  children,\n  icon = true,\n}: CalloutProps) => {\n  const Icon = icons[variant ?? \"info\"];\n\n  return (\n    <div className={cn(calloutVariants({ variant }))}>\n      <div className=\"flex gap-3\">\n        {icon && <Icon className=\"mt-0.5 size-5 shrink-0 text-foreground\" />}\n        <div className=\"min-w-0\">\n          {title && <div className=\"mb-1 text-sm font-semibold\">{title}</div>}\n          <div className=\"text-sm text-muted-foreground\">{children}</div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport { Callout, calloutVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/callout.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

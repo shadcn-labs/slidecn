@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "quote-slide",
+  "title": "Quote Slide",
+  "description": "A quote/citation slide with minimal, large, and accent variants.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/quote-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { Quote } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst quoteSlideVariants = cva(\"flex h-full flex-col justify-center\", {\n  defaultVariants: {\n    variant: \"minimal\",\n  },\n  variants: {\n    variant: {\n      accent: \"gap-4 relative\",\n      large: \"gap-6\",\n      minimal: \"gap-4\",\n    },\n  },\n});\n\ninterface QuoteSlideProps\n  extends SlideProps, VariantProps<typeof quoteSlideVariants> {\n  quote: string;\n  attribution?: string;\n  source?: string;\n  notes?: string;\n}\n\nconst QuoteSlide = ({\n  quote,\n  attribution,\n  source,\n  variant,\n  className,\n  notes,\n  ...slideProps\n}: QuoteSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className={cn(quoteSlideVariants({ variant }))}>\n      {variant === \"accent\" && (\n        <Quote className=\"absolute left-8 top-8 size-32 opacity-10\" />\n      )}\n      <blockquote\n        className={cn(\n          \"font-medium leading-relaxed tracking-tight\",\n          variant === \"large\" ? \"r-fit-text\" : \"text-2xl\"\n        )}\n      >\n        &ldquo;{quote}&rdquo;\n      </blockquote>\n      {(attribution || source) && (\n        <div className=\"flex flex-col gap-1 text-sm text-muted-foreground\">\n          {attribution && (\n            <cite className=\"not-italic\">&mdash; {attribution}</cite>\n          )}\n          {source && <span className=\"text-xs\">{source}</span>}\n        </div>\n      )}\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { QuoteSlide, quoteSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/quote-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

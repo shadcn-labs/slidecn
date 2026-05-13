@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-dark",
+  "title": "Dark Theme",
+  "description": "A dark theme for slidecn presentations.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/themes/theme-dark.css",
+      "content": "/* slidecn — dark theme */\n.reveal {\n  --r-background-color: hsl(240 10% 3.9%);\n  --r-main-color: hsl(0 0% 98%);\n  --r-muted-color: hsl(240 5% 64.9%);\n  --r-heading-color: hsl(0 0% 98%);\n  --r-link-color: hsl(0 0% 98%);\n  --r-link-color-hover: hsl(0 0% 80%);\n  --r-selection-background-color: hsl(240 3.7% 15.9%);\n  --r-main-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-heading-font: var(--font-sans, ui-sans-serif, system-ui, sans-serif);\n  --r-code-font: var(--font-mono, ui-monospace, monospace);\n  --r-heading-font-weight: 600;\n  --r-heading-text-transform: none;\n  --r-heading-letter-spacing: -0.02em;\n}\n",
+      "type": "registry:file",
+      "target": "components/slides/themes/theme-dark.css"
+    }
+  ],
+  "type": "registry:file"
+}

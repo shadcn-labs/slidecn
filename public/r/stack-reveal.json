@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stack-reveal",
+  "title": "Stack Reveal",
+  "description": "A thin typed wrapper over the reveal.js Stack component.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/stack-reveal.tsx",
+      "content": "\"use client\";\n\nimport { Stack } from \"@revealjs/react\";\nimport type { StackProps } from \"@revealjs/react\";\n\nconst StackReveal = (props: StackProps) => <Stack {...props} />;\n\nexport { StackReveal };\n",
+      "type": "registry:ui",
+      "target": "components/slides/stack-reveal.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

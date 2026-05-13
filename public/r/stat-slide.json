@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-slide",
+  "title": "Stat Slide",
+  "description": "A statistics-focused slide with single, row, or grid layouts.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/stat-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst statSlideVariants = cva(\"\", {\n  defaultVariants: {\n    layout: \"single\",\n  },\n  variants: {\n    layout: {\n      grid: \"grid grid-cols-2 gap-8\",\n      row: \"flex flex-wrap items-center justify-around gap-8\",\n      single: \"flex flex-col items-center justify-center gap-2\",\n    },\n  },\n});\n\ninterface Stat {\n  value: string;\n  label: string;\n  description?: string;\n}\n\ninterface StatSlideProps\n  extends SlideProps, VariantProps<typeof statSlideVariants> {\n  title?: string;\n  stats: Stat[];\n  notes?: string;\n}\n\nconst StatSlide = ({\n  title,\n  stats,\n  layout,\n  className,\n  notes,\n  ...slideProps\n}: StatSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className=\"flex h-full flex-col gap-8\">\n      {title && <h2 className=\"text-3xl font-bold tracking-tight\">{title}</h2>}\n      <div className={cn(statSlideVariants({ layout }), \"flex-1\")}>\n        {stats.map((stat, i) => (\n          <div\n            key={i}\n            className={cn(\n              \"flex flex-col\",\n              layout === \"single\" && \"items-center text-center\"\n            )}\n          >\n            <span\n              className={cn(\n                \"font-bold tracking-tight\",\n                layout === \"single\" ? \"r-fit-text\" : \"text-4xl\"\n              )}\n            >\n              {stat.value}\n            </span>\n            <span className=\"text-sm font-medium text-muted-foreground\">\n              {stat.label}\n            </span>\n            {stat.description && (\n              <span className=\"mt-1 text-xs text-muted-foreground/70\">\n                {stat.description}\n              </span>\n            )}\n          </div>\n        ))}\n      </div>\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { StatSlide, statSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/stat-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

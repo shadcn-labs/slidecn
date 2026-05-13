@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-registry-kit",
+  "name": "slidecn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,14 @@
     "build": "pnpm registry:build && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "registry:build": "shadcn build registry.json --output ./public/r",
+    "registry:build": "shadcn build",
     "postinstall": "fumadocs-mdx",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepare": "lefthook install"
   },
   "dependencies": {
+    "@revealjs/react": "^0.2.1",
     "@tailwindcss/postcss": "^4.2.4",
     "@vercel/analytics": "^2.0.1",
     "@web-kits/audio": "^0.1.0",
@@ -35,9 +36,11 @@
     "react-dom": "19.2.5",
     "react-hotkeys-hook": "^5.2.4",
     "rehype-pretty-code": "^0.14.3",
+    "reveal.js": "^6.0.1",
     "shiki": "^4.0.2",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",
+    "ts-morph": "^26.0.0",
     "vaul": "^1.1.2",
     "web-haptics": "^0.0.6",
     "zod": "^4.3.6"

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "content-slide",
+  "title": "Content Slide",
+  "description": "A general purpose content slide with multiple layout options.",
+  "dependencies": [
+    "@revealjs/react",
+    "reveal.js"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/slidecn/ui/content-slide.tsx",
+      "content": "\"use client\";\n\nimport { Slide } from \"@revealjs/react\";\nimport type { SlideProps } from \"@revealjs/react\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport type { ReactNode } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst contentSlideVariants = cva(\"h-full\", {\n  defaultVariants: {\n    layout: \"default\",\n  },\n  variants: {\n    layout: {\n      default: \"flex flex-col gap-4\",\n      \"full-bleed\": \"h-full w-full\",\n      split: \"grid grid-cols-2 gap-8\",\n    },\n  },\n});\n\ninterface ContentSlideProps\n  extends SlideProps, VariantProps<typeof contentSlideVariants> {\n  title?: string;\n  children: ReactNode;\n  notes?: string;\n}\n\nconst ContentSlide = ({\n  title,\n  layout,\n  className,\n  children,\n  notes,\n  ...slideProps\n}: ContentSlideProps) => (\n  <Slide className={cn(className)} {...slideProps}>\n    <div className={cn(contentSlideVariants({ layout }))}>\n      {title && layout !== \"full-bleed\" && (\n        <h2 className=\"text-3xl font-bold tracking-tight\">{title}</h2>\n      )}\n      {children}\n    </div>\n    {notes && <aside className=\"notes\">{notes}</aside>}\n  </Slide>\n);\n\nexport { ContentSlide, contentSlideVariants };\n",
+      "type": "registry:ui",
+      "target": "components/slides/content-slide.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
