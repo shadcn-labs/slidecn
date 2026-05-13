@@ -7,14 +7,16 @@ export const ComponentPreview = ({
   src,
   title,
   children,
+  hideCode = false,
 }: {
   name?: string;
   src?: string;
   title?: string;
   children?: ReactNode;
+  hideCode?: boolean;
 }) => (
   <>
     {children}
-    <ComponentSource name={name} src={src} title={title} />
+    {!hideCode && <ComponentSource name={name} src={src} title={title} />}
   </>
 );

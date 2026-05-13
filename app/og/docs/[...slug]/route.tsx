@@ -6,9 +6,11 @@ import { getPageImage, source } from "@/lib/source";
 
 export const revalidate = false;
 
+type RouteParams = Promise<{ slug: string[] }>;
+
 export const GET = async (
   _req: Request,
-  { params }: RouteContext<"/og/docs/[...slug]">
+  { params }: { params: RouteParams }
 ) => {
   const { slug } = await params;
   const page = source.getPage(slug.slice(0, -1));

@@ -12,7 +12,7 @@ import { SITE } from "@/constants/site";
 import type { PackageManager } from "@/hooks/use-package-manager";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { cn } from "@/lib/utils";
-import registry from "@/registry.json";
+// import registry from "@/registry.json";
 
 const pmCommands = {
   bun: "bunx --bun",
@@ -21,18 +21,20 @@ const pmCommands = {
   yarn: "yarn",
 };
 
-const registryItemNames = registry.items
-  .map((item) => item.name)
-  .toSorted((a, b) =>
-    a.localeCompare(b, "en", {
-      sensitivity: "base",
-    })
-  );
+const registryItemNames = [
+  "accordion",
+  "alert",
+  "avatar",
+  "badge",
+  "button",
+  "card",
+  "checkbox",
+];
 
 export const CommandBox = ({ className }: { className?: string }) => {
   const [packageManager, setPackageManager] = usePackageManager();
 
-  const currentItemRef = useRef(registryItemNames[0]);
+  const currentItemRef = useRef(registryItemNames[0] ?? "");
 
   return (
     <div

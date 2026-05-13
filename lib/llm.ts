@@ -87,7 +87,7 @@ const componentSourceMarkdown = async (
   const guessedPaths = src
     ? [src]
     : [
-        `registry/new-york/${name}.tsx`,
+        `registry/slidecn/ui/${name}.tsx`,
         `components/${name}.tsx`,
         `components/ui/${name}.tsx`,
       ];
