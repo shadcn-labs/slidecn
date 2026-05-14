@@ -1,0 +1,28 @@
+---
+title: "MCP"
+description: "Learn how to use the shadcn MCP (Model Context Protocol) server with slidecn."
+---
+
+[MCP](https://modelcontextprotocol.io/) is an open protocol that standardizes how applications provide context to LLMs. The shadcn CLI can register an MCP server so your editor can discover registry components—including items you install from **slidecn** via the same CLI.
+
+## Configure MCP
+
+Run:
+
+```bash
+npx dlx shadcn@latest mcp init
+```
+
+Choose your MCP client when prompted, then enable the MCP server in that client to finish setup.
+
+## Usage
+
+With MCP enabled, you can ask your IDE to work with **slidecn** patterns. Example prompts:
+
+- Assemble a **deck** from **`title-slide`**, **`section-slide`**, and **`content-slide`**, then apply **`theme-default`** or **`theme-dark`**.
+- Start from a template such as **`pitch-deck`**, **`tech-talk`**, **`product-demo`**, or **`weekly-report`** and tailor copy and slides.
+- Add **`split-slide`** or **`image-slide`** for two-column or hero imagery, and use **`stat-slide`** or **`comparison-slide`** for metrics.
+- Layer **`fragment-list`**, **`fragment-reveal`**, or **`auto-animate-pair`** for step-by-step reveals in Reveal.js.
+- Drop in **`code-block`**, **`notes`**, or **`fit-text`** where you need syntax highlighting, speaker notes, or responsive headings.
+
+Install items with **`npx shadcn@latest add @slidecn/<name>`** or the **`https://slidecn.dev/r/<name>.json`** URL on each docs page, then import from **`@/components/slides/...`** (or your configured target path) as usual.

@@ -1,35 +1,66 @@
 ---
-title: Introduction
-description: Beautiful presentation components, made simple. Built on reveal.js.
+title: "Introduction"
+description: "Copy-paste presentation components for React. Built on reveal.js, works with the shadcn CLI."
 ---
 
-**slidecn** is a collection of beautiful presentation components built on [reveal.js](https://revealjs.com). It makes creating stunning slides easy while maintaining full compatibility with [shadcn/ui](https://ui.shadcn.com).
+import {
+  ZapIcon,
+  SunMoonIcon,
+  LayoutGridIcon,
+  Code2Icon,
+  ClipboardCopyIcon,
+  BlocksIcon,
+} from "lucide-react";
 
-## What You Get
+**slidecn** provides beautifully designed and customizable presentation components. Built on [reveal.js](https://revealjs.com/) with [`@revealjs/react`](https://github.com/hakimel/reveal.js/tree/master/react) and designed to work seamlessly with the [shadcn CLI](https://ui.shadcn.com).
 
-- 🎯 **Reveal.js powered** - Build beautiful presentations with the popular HTML presentation framework
-- 📚 **Documentation site** - Powered by Fumadocs
-- 🎨 **Shadcn compatible** - Works with `npx shadcn add`
-- 🤖 **[Agent ready](https://www.mintlify.com/score/slidecn)** - Ships with `llms.txt`, `llms-full.txt`, API catalog routes, and agent skill discovery endpoints
-- 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in interaction sounds powered by `@web-kits/audio`
-- 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback for supported devices via `web-haptics`
-- ✨ **[Motion animations](https://motion.dev/)** - Uses `motion` for animated UI states and transitions
-- 🎯 **[Animated icons](https://lucide-animated.com/)** - Includes reusable animated icons for buttons, sharing, and navigation
-- 🔄 **[View transitions](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)** - Uses Next.js view transitions for smoother page changes
-- 🚀 **Deploy ready** - Deploy anywhere
+## Philosophy
 
-## Tech Stack
+slidecn follows the shadcn model for presentations: copy-paste components you can own, with zero lock-in and sensible defaults that work immediately.
 
-- `Next.js 16` + App Router
-- `React 19`
-- `Tailwind CSS 4`
-- `Reveal.js` - HTML presentation framework
-- `Fumadocs` - Documentation
-- `motion` - Animations
-- `@web-kits/audio` - Audio feedback
-- `web-haptics` - Haptic feedback
-- `shiki` + `rehype-pretty-code` - Code highlighting
+Decks often sprawl across one-off JSX and inline styles. slidecn keeps themes, components and blocks consistent, while you can still use raw `Slide` markup from `@revealjs/react` whenever you need it.
 
-## Coming Soon
+The goal is simple: make presentations feel like the rest of your stack — composable, themeable, and easy to customize.
 
-We're currently working on adding more presentation components. Stay tuned!
+## Why slidecn?
+
+Most presentation components are either locked into a SaaS editor or ad hoc in the repo. slidecn is for teams that want to ship decks from the same React codebase without giving up control:
+
+- **Own Your Code:** Copy components into your project and change markup, copy, and styles freely.
+- **Start Fast:** Run one command and render a deck with production-ready slide primitives.
+- **Scale Safely:** Build on top of reveal.js, then drop to lower-level APIs when you need full control.
+
+## Features
+
+<div className="not-prose grid gap-4 sm:grid-cols-2 mt-4">
+  <FeatureCard
+    icon={ZapIcon}
+    title="Zero Config"
+    description="Works out of the box with sensible defaults. No boilerplate needed."
+  />
+  <FeatureCard
+    icon={SunMoonIcon}
+    title="Theme Aware"
+    description="Automatically adapts colors to your chosen slide theme."
+  />
+  <FeatureCard
+    icon={LayoutGridIcon}
+    title="Composable"
+    description="Build full decks from title, section, content, split, and specialty slides."
+  />
+  <FeatureCard
+    icon={Code2Icon}
+    title="TypeScript"
+    description="Full type safety with comprehensive TypeScript support."
+  />
+  <FeatureCard
+    icon={ClipboardCopyIcon}
+    title="Copy & Paste"
+    description="Own your code. No runtime dependencies, just install into your project."
+  />
+  <FeatureCard
+    icon={BlocksIcon}
+    title="shadcn Compatible"
+    description="Uses the same registry format — add components with npx shadcn add."
+  />
+</div>

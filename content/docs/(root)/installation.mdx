@@ -1,106 +1,63 @@
 ---
-title: Installation
-description: How to use slidecn components in your project.
+title: "Installation"
+description: "Install reveal.js components, blocks and themes from the slidecn registry."
 ---
 
 ## Prerequisites
 
-Before using slidecn components, make sure you have:
+A project with [reveal.js](https://revealjs.com/) set up.
 
-- A React project (Next.js, Remix, Vite, etc.)
-- [shadcn/ui](https://ui.shadcn.com) installed
+## Installation
 
-## Installing Components
-
-To install a slidecn component:
+Run the following command to add any component or block:
 
 ```bash
-npx shadcn@latest add https://slidecn.dev/r/component-name.json
+npx shadcn@latest add @slidecn/section-slide
 ```
 
-## Development Setup
+## Usage
 
-### 1. Clone the Repository
+Import and use the component:
 
-```bash
-git clone https://github.com/Aniket-508/slidecn.git
-cd slidecn
+```tsx
+import { Deck } from "@revealjs/react";
+
+import SectionSlide from "@/components/slidecn/section-slide";
+
+import "reveal.js/reveal.css";
+
+export function MyPresentation() {
+  return (
+    <Deck>
+      <SectionSlide label="Chapter 2" title="Our solution" variant="accent" />
+    </Deck>
+  );
+}
 ```
 
-### 2. Install Dependencies
+Compose multiple slides and opt into a theme CSS file from the registry:
 
-```bash
-pnpm install
+```tsx
+import { Deck } from "@revealjs/react";
+
+import SectionSlide from "@/components/slides/section-slide";
+import TitleSlide from "@/components/slides/title-slide";
+
+import "reveal.js/reveal.css";
+import "@/components/slides/themes/theme-default.css";
+
+export function PitchOutline() {
+  return (
+    <Deck>
+      <TitleSlide
+        eyebrow="Q4 Review"
+        title="Acme Corp"
+        subtitle="Ship faster with slidecn"
+        author="Jane Smith"
+        date="2026"
+      />
+      <SectionSlide label="Agenda" title="Today we will cover" />
+    </Deck>
+  );
+}
 ```
-
-### 3. Start Development Server
-
-```bash
-pnpm dev
-```
-
-### 4. Build for Production
-
-```bash
-pnpm build
-```
-
-## Project Structure
-
-```
-├── registry/                 # Component registry files
-│   └── new-york/            # Registry components
-├── content/docs/             # Documentation (MDX)
-├── app/                     # Next.js app
-├── public/r/                # Built registry files (auto-generated)
-└── components/              # UI components
-```
-
-## Adding New Components
-
-To add new presentation components:
-
-1. Create component in `registry/slidecn/ui/`
-2. Update `registry.json` with component details
-3. Run `pnpm registry:build`
-
----
-
-## FAQ
-
-<Accordion type="multiple">
-
-<AccordionItem value="faq-1">
-<AccordionTrigger>
-What is reveal.js?
-</AccordionTrigger>
-<AccordionContent>
-
-[Reveal.js](https://revealjs.com) is a popular HTML presentation framework that enables you to create beautiful, interactive presentations using web technologies.
-
-</AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-2">
-<AccordionTrigger>
-Do I need shadcn/ui to use slidecn?
-</AccordionTrigger>
-<AccordionContent>
-
-Yes, slidecn components are designed to work with shadcn/ui. Make sure you have shadcn/ui set up in your project first.
-
-</AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-3">
-<AccordionTrigger>
-Which frameworks are supported?
-</AccordionTrigger>
-<AccordionContent>
-
-Any React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.
-
-</AccordionContent>
-</AccordionItem>
-
-</Accordion>
