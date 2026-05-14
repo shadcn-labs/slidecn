@@ -2,11 +2,8 @@
 
 import { Code } from "@revealjs/react";
 import type { CodeProps } from "@revealjs/react";
-import { defineSound } from "@web-kits/audio";
 import { FileCode, Copy } from "lucide-react";
-import { toast } from "sonner";
 
-import * as audio from "@/audio/core";
 import { cn } from "@/lib/utils";
 
 interface CodeBlockProps extends Omit<CodeProps, "children"> {
@@ -35,10 +32,8 @@ const CodeBlock = ({
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(children);
-      defineSound(audio.click)();
-      toast.success("Copied to clipboard");
     } catch {
-      toast.error("Failed to copy");
+      //noop
     }
   };
 

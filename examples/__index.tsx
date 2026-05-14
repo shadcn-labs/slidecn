@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 
 import { AutoAnimatePairDemo } from "./auto-animate-pair-demo";
-import { CalloutDemo } from "./callout-demo";
 import { CodeBlockDemo } from "./code-block-demo";
 import { ComparisonSlideDemo } from "./comparison-slide-demo";
 import { ContentSlideDemo } from "./content-slide-demo";
@@ -30,7 +29,6 @@ import { WeeklyReportDemo } from "./weekly-report-demo";
 
 export const demos: Record<string, ComponentType> = {
   "auto-animate-pair-demo": AutoAnimatePairDemo,
-  "callout-demo": CalloutDemo,
   "code-block-demo": CodeBlockDemo,
   "comparison-slide-demo": ComparisonSlideDemo,
   "content-slide-demo": ContentSlideDemo,
