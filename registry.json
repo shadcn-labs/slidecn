@@ -172,12 +172,7 @@
       "type": "registry:ui",
       "title": "Code Block",
       "description": "A syntax-highlighted code block with filename, line numbers, and copy button.",
-      "dependencies": [
-        "@revealjs/react",
-        "reveal.js",
-        "sonner",
-        "@web-kits/audio"
-      ],
+      "dependencies": ["@revealjs/react", "reveal.js"],
       "registryDependencies": [],
       "files": [
         {
@@ -229,21 +224,6 @@
           "path": "registry/slidecn/ui/fit-text.tsx",
           "type": "registry:ui",
           "target": "components/slides/fit-text.tsx"
-        }
-      ]
-    },
-    {
-      "name": "callout",
-      "type": "registry:ui",
-      "title": "Callout",
-      "description": "An info, warning, tip, or danger callout box with icon and title.",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/slidecn/ui/callout.tsx",
-          "type": "registry:ui",
-          "target": "components/slides/callout.tsx"
         }
       ]
     },
