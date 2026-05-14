@@ -14,21 +14,19 @@
 <br />
 
 <p align="center">
-  <img src="https://slidecn.dev/og.png" alt="slidecn banner" />
+  <img src="public/og.png" alt="slidecn banner" />
 </p>
 
 ## Features
 
-- 🎯 **Reveal.js powered** - Build beautiful presentations with ease
-- 🎨 **Shadcn compatible** - Works with `npx shadcn add`
-- 📚 **Documentation site** - Beautiful docs powered by Fumadocs
-- 🤖 **[Agent ready](https://www.mintlify.com/score/slidecn)** - Includes `llms.txt`, `llms-full.txt`, agent skills discovery routes, and API catalog endpoints
-- 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in sound effects powered by `@web-kits/audio`
-- 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback hooks for supported devices via `web-haptics`
-- ✨ **[Motion animations](https://motion.dev/)** - `motion`-powered UI polish for copy states, text transitions, and interactive elements
-- 🎯 **[Animated icons](https://lucide-animated.com/)** - Reusable animated icons for navigation, sharing, sponsorship, and CTAs
-- 🔄 **[View transitions](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)** - Next.js view transitions enabled for smoother navigation between pages
-- 🚀 **Deploy ready** - Deploy anywhere
+- 🎯 **Zero config** — Works out of the box with sensible defaults
+- 🎨 **Theme-aware** — Automatically adapts to your chosen slide theme
+- 📦 **shadcn/ui compatible** — Uses the same registry format and CLI
+- 🧩 **Composable** — Build complex presentations with simple, declarative components
+- 🗂️ **Pre-built decks** — Blocks for PitchDeck, TechTalk, ProductDemo, and WeeklyReport
+- 🔄 **Transitions & motion** — None, fade, slide, convex, concave, and zoom; fragments for step-by-step reveals
+- 📊 **Code on slides** — Shiki syntax highlighting with line numbers and copy-to-clipboard
+- ⌨️ **reveal.js powered** — Full access to the reveal.js deck model, keyboard navigation, and presenter flow
 
 ## Contributing
 
