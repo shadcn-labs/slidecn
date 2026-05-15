@@ -40,7 +40,7 @@ export default function IndexPage() {
               </h1>
 
               <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-                Ready to use, customizable terminal components for React.
+                Ready to use, customizable presentation components for React.
                 <br className="hidden sm:block" />
                 Built on reveal.js. Distributed via shadcn.
               </p>
