@@ -1,20 +1,24 @@
+<p align="center">
+  <img src="public/og.png" alt="slidecn banner" />
+</p>
+
 <h1 align="center">slidecn</h1>
 
 <p align="center">
   Free & open-source, ready-to-use, customizable presentation components for React.<br/>
   Zero config. One command setup. Built on <a href="https://revealjs.com/">reveal.js</a>, works seamlessly with <a href="https://ui.shadcn.com/">shadcn/ui</a>.
+  <br />
+  <br />
+  <a href="https://github.com/shadcn-labs/slidecn"><img src="https://www.shieldcn.dev/github/stars/shadcn-labs/slidecn.svg?variant=secondary&size=xs&theme=zinc" alt="GitHub Stars" /></a>
+  <a href="https://github.com/shadcn-labs/slidecn/actions"><img src="https://www.shieldcn.dev/github/ci/shadcn-labs/slidecn.svg?variant=secondary&size=xs&theme=zinc" alt="CI" /></a>
+  <a href="https://discord.com/invite/N6G36KhYK4"><img src="https://www.shieldcn.dev/discord/online-members/N6G36KhYK4.svg?variant=secondary&size=xs&theme=zinc" alt="Discord Members" /></a>
+  <a href="https://x.com/shadcnlabs"><img src="https://www.shieldcn.dev/x/follow/shadcnlabs.svg?variant=branded&size=xs&theme=zinc" alt="X Follow" /></a>
 </p>
 
 <p align="center">
-  <a href="https://slidecn.dev/docs">Get Started</a> ·
-  <a href="https://slidecn.dev/docs/installation">Installation</a> ·
-  <a href="https://slidecn.dev/docs/components">Components</a>
-</p>
-
-<br />
-
-<p align="center">
-  <img src="public/og.png" alt="slidecn banner" />
+  <a href="https://slidecn.vercel.app/docs">Get Started</a> ·
+  <a href="https://slidecn.vercel.app/docs/installation">Installation</a> ·
+  <a href="https://slidecn.vercel.app/docs/components">Components</a>
 </p>
 
 ## Features
